@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>DanielX-BTC</title>
 
   <style>
@@ -15,138 +14,164 @@
     }
 
     body {
-      min-height: 100vh;
+      background: #07111f;
       color: white;
-      background:
-        linear-gradient(rgba(3,8,20,0.88), rgba(3,8,20,0.95)),
-        radial-gradient(circle at top, #173b70, #030814 65%);
     }
 
     header {
       padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #26344f;
-      background: rgba(5,12,28,0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0b1728;
+      border-bottom: 1px solid #1d3048;
     }
 
     .logo {
-      font-size: 30px;
+      font-size: 24px;
       font-weight: bold;
-      letter-spacing: 2px;
     }
 
     .logo span {
-      color: #20a9ff;
+      color: #00d4ff;
     }
 
     .hero {
       text-align: center;
-      padding: 55px 20px 35px;
+      padding: 70px 20px;
+      background: linear-gradient(135deg, #07111f, #102b46);
     }
 
     .hero h1 {
-      font-size: 38px;
+      font-size: 42px;
       margin-bottom: 15px;
     }
 
-    .hero h1 span {
-      color: #20a9ff;
-    }
-
     .hero p {
-      color: #b9c4d8;
+      color: #b7c7d9;
+      margin-bottom: 30px;
       font-size: 17px;
-      line-height: 1.6;
-      max-width: 650px;
-      margin: auto;
     }
 
-    .buttons {
-      margin-top: 28px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 25px;
-      margin: 6px;
+    button {
+      border: none;
       border-radius: 8px;
-      text-decoration: none;
+      padding: 13px 22px;
+      font-size: 15px;
       font-weight: bold;
-      color: white;
-      background: #168cff;
+      cursor: pointer;
     }
 
-    .btn.secondary {
-      background: transparent;
-      border: 1px solid #168cff;
+    .market-btn {
+      background: #00d4ff;
+      color: #00111a;
     }
 
-    .section {
-      max-width: 1000px;
+    #market {
+      display: none;
+      padding: 40px 20px;
+      max-width: 900px;
       margin: auto;
-      padding: 25px 20px 50px;
     }
 
-    .section h2 {
+    #market h2 {
       text-align: center;
       margin-bottom: 25px;
-      font-size: 27px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: rgba(14,25,48,0.9);
-      border: 1px solid #263b5e;
-      border-radius: 15px;
-      padding: 25px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      font-size: 30px;
     }
 
     .coin {
-      font-size: 40px;
-      margin-bottom: 12px;
+      background: #0d1d31;
+      border: 1px solid #1d3855;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
     }
 
-    .card h3 {
-      font-size: 22px;
-      margin-bottom: 8px;
+    .coin-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
     }
 
-    .card p {
-      color: #aebbd0;
-      margin-bottom: 18px;
-    }
-
-    .trade {
-      display: inline-block;
-      padding: 10px 22px;
-      border-radius: 7px;
-      background: #168cff;
-      color: white;
-      text-decoration: none;
+    .coin-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #152c44;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: bold;
     }
 
-    .about {
+    .coin-name {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .coin-symbol {
+      color: #8da5bd;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #00d4ff;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .buy {
+      background: #16c784;
+      color: white;
+    }
+
+    .sell {
+      background: #ea3943;
+      color: white;
+    }
+
+    .notice {
       text-align: center;
-      max-width: 700px;
-      margin: 20px auto;
-      color: #b9c4d8;
-      line-height: 1.7;
+      color: #8da5bd;
+      margin-top: 25px;
+      font-size: 13px;
     }
 
     footer {
       text-align: center;
-      padding: 25px;
-      border-top: 1px solid #26344f;
-      color: #8996aa;
-      font-size: 14px;
+      padding: 30px 20px;
+      color: #71859a;
+      border-top: 1px solid #1d3048;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 650px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .coin {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .actions {
+        width: 100%;
+      }
+
+      .actions button {
+        flex: 1;
+      }
     }
   </style>
 </head>
@@ -158,57 +183,71 @@
   </header>
 
   <section class="hero">
-    <h1>Welcome to <span>DanielX-BTC</span></h1>
+    <h1>Welcome to DanielX-BTC</h1>
+    <p>Explore digital assets and view the cryptocurrency market.</p>
 
-    <p>
-      A modern crypto platform concept for discovering,
-      tracking and managing digital assets.
-    </p>
-
-    <div class="buttons">
-      <a href="#markets" class="btn">View Markets</a>
-      <a href="#about" class="btn secondary">Learn More</a>
-    </div>
+    <button class="market-btn" onclick="showMarket()">
+      View Market
+    </button>
   </section>
 
-  <section class="section" id="markets">
+  <section id="market">
 
-    <h2>Popular Crypto Markets</h2>
+    <h2>Crypto Market</h2>
 
-    <div class="cards">
-
-      <div class="card">
-        <div class="coin">₿</div>
-        <h3>Bitcoin</h3>
-        <p>BTC</p>
-        <a href="#" class="trade">View BTC</a>
+    <div class="coin">
+      <div class="coin-info">
+        <div class="coin-icon">₿</div>
+        <div>
+          <div class="coin-name">Bitcoin</div>
+          <div class="coin-symbol">BTC</div>
+        </div>
       </div>
 
-      <div class="card">
-        <div class="coin">✕</div>
-        <h3>XRP</h3>
-        <p>XRP</p>
-        <a href="#" class="trade">View XRP</a>
-      </div>
+      <div class="price">$--</div>
 
-      <div class="card">
-        <div class="coin">◎</div>
-        <h3>Solana</h3>
-        <p>SOL</p>
-        <a href="#" class="trade">View SOL</a>
+      <div class="actions">
+        <button class="buy" onclick="buyCoin('Bitcoin')">Buy</button>
+        <button class="sell" onclick="sellCoin('Bitcoin')">Sell</button>
       </div>
-
     </div>
-  </section>
 
-  <section class="section" id="about">
+    <div class="coin">
+      <div class="coin-info">
+        <div class="coin-icon">XRP</div>
+        <div>
+          <div class="coin-name">XRP</div>
+          <div class="coin-symbol">XRP</div>
+        </div>
+      </div>
 
-    <h2>About DanielX-BTC</h2>
+      <div class="price">$--</div>
 
-    <p class="about">
-      DanielX-BTC is a cryptocurrency website concept designed
-      to provide a simple and modern digital-asset experience.
-      Explore crypto markets and learn more about digital assets.
+      <div class="actions">
+        <button class="buy" onclick="buyCoin('XRP')">Buy</button>
+        <button class="sell" onclick="sellCoin('XRP')">Sell</button>
+      </div>
+    </div>
+
+    <div class="coin">
+      <div class="coin-info">
+        <div class="coin-icon">SOL</div>
+        <div>
+          <div class="coin-name">Solana</div>
+          <div class="coin-symbol">SOL</div>
+        </div>
+      </div>
+
+      <div class="price">$--</div>
+
+      <div class="actions">
+        <button class="buy" onclick="buyCoin('Solana')">Buy</button>
+        <button class="sell" onclick="sellCoin('Solana')">Sell</button>
+      </div>
+    </div>
+
+    <p class="notice">
+      Market prices will be connected to a live price service later.
     </p>
 
   </section>
@@ -216,6 +255,24 @@
   <footer>
     © 2026 DanielX-BTC. All rights reserved.
   </footer>
+
+  <script>
+    function showMarket() {
+      document.getElementById("market").style.display = "block";
+
+      document.getElementById("market").scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+
+    function buyCoin(coin) {
+      alert("Buy " + coin + " — trading feature coming soon.");
+    }
+
+    function sellCoin(coin) {
+      alert("Sell " + coin + " — trading feature coming soon.");
+    }
+  </script>
 
 </body>
 </html>
