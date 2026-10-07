@@ -1,1020 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DanielX-BTC | Crypto Exchange</title>
 
-<title>DanielX-BTC | Crypto Market</title>
-
-<style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#070b18;
-    color:#fff;
-}
-
-header{
-    background:#0d1429;
-    border-bottom:1px solid #26345d;
-    padding:16px 5%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:100;
-}
-
-.logo{
-    font-size:24px;
-    font-weight:bold;
-}
-
-.logo span{
-    color:#00d9ff;
-}
-
-nav a{
-    color:#fff;
-    text-decoration:none;
-    margin-left:18px;
-    font-size:14px;
-}
-
-nav a:hover{
-    color:#00d9ff;
-}
-
-.login{
-    border:1px solid #00d9ff;
-    padding:9px 15px;
-    border-radius:7px;
-}
-
-.demo{
-    background:#f5a623;
-    color:#111;
-    text-align:center;
-    padding:9px;
-    font-size:13px;
-    font-weight:bold;
-}
-
-.hero{
-    text-align:center;
-    padding:75px 20px;
-    background:
-    radial-gradient(circle at top,#16275a,#070b18 65%);
-}
-
-.hero h1{
-    font-size:46px;
-    margin-bottom:18px;
-}
-
-.hero h1 span{
-    color:#00d9ff;
-}
-
-.hero p{
-    color:#b7c1df;
-    max-width:700px;
-    margin:auto;
-    line-height:1.7;
-    font-size:17px;
-}
-
-.buttons{
-    margin-top:30px;
-}
-
-.btn{
-    display:inline-block;
-    padding:14px 25px;
-    margin:5px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-}
-
-.primary{
-    background:#00d9ff;
-    color:#041019;
-}
-
-.secondary{
-    border:1px solid #00d9ff;
-    color:#00d9ff;
-}
-
-.container{
-    max-width:1150px;
-    margin:auto;
-    padding:50px 20px;
-}
-
-.title{
-    text-align:center;
-    margin-bottom:30px;
-    font-size:30px;
-}
-
-.search{
-    width:100%;
-    max-width:500px;
-    display:block;
-    margin:0 auto 30px;
-    padding:14px 18px;
-    border-radius:8px;
-    border:1px solid #33436f;
-    background:#111a35;
-    color:white;
-    outline:none;
-}
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.card{
-    background:#10182f;
-    border:1px solid #26345d;
-    border-radius:14px;
-    padding:23px;
-    transition:.25s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    border-color:#00d9ff;
-}
-
-.coin{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:20px;
-}
-
-.coin-name{
-    font-size:20px;
-    font-weight:bold;
-}
-
-.symbol{
-    color:#8794bd;
-    font-size:13px;
-}
-
-.price{
-    font-size:27px;
-    font-weight:bold;
-    margin-bottom:9px;
-}
-
-.change{
-    color:#28df91;
-    margin-bottom:20px;
-}
-
-.change.red{
-    color:#ff5570;
-}
-
-.trade-buttons{
-    display:flex;
-    gap:8px;
-}
-
-.buy,.sell{
-    width:50%;
-    padding:10px;
-    border:0;
-    border-radius:7px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.buy{
-    background:#20d990;
-    color:#06150f;
-}
-
-.sell{
-    background:#ff536c;
-    color:white;
-}
-
-.panel{
-    background:#10182f;
-    border:1px solid #26345d;
-    border-radius:14px;
-    padding:25px;
-    max-width:600px;
-    margin:40px auto;
-}
-
-.panel h2{
-    margin-bottom:20px;
-}
-
-.input{
-    width:100%;
-    padding:13px;
-    margin:7px 0;
-    background:#080e20;
-    border:1px solid #33436f;
-    color:white;
-    border-radius:7px;
-}
-
-.action{
-    width:100%;
-    padding:13px;
-    margin-top:10px;
-    border:0;
-    border-radius:7px;
-    background:#00d9ff;
-    color:#041019;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-.features{
-    background:#0d1429;
-}
-
-.feature-grid{
-    max-width:1050px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.feature{
-    background:#10182f;
-    border:1px solid #26345d;
-    border-radius:12px;
-    padding:25px;
-    text-align:center;
-}
-
-.feature h3{
-    margin-bottom:12px;
-}
-
-.feature p{
-    color:#aab5d5;
-    line-height:1.6;
-}
-
-footer{
-    text-align:center;
-    padding:30px;
-    color:#7f8aaa;
-    border-top:1px solid #26345d;
-}
-
-.status{
-    text-align:center;
-    color:#8491b5;
-    font-size:13px;
-    margin-top:20px;
-}
-
-@media(max-width:650px){
-
-    header{
-        flex-direction:column;
-        gap:15px;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
     }
 
-    nav a{
-        margin:0 6px;
+    body {
+      background: #07111f;
+      color: white;
     }
 
-    .hero h1{
-        font-size:34px;
+    header {
+      background: #0b1728;
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1c3048;
     }
 
-    .hero{
-        padding:55px 20px;
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #19d3ff;
     }
-}
-</style>
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+    }
+
+    .hero {
+      padding: 60px 5%;
+      text-align: center;
+      background: linear-gradient(135deg, #07111f, #102a45);
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #19d3ff;
+    }
+
+    .hero p {
+      color: #b8c5d4;
+      max-width: 650px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .buttons {
+      margin-top: 25px;
+    }
+
+    button {
+      border: none;
+      padding: 14px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      margin: 5px;
+    }
+
+    .primary {
+      background: #19d3ff;
+      color: #00111c;
+    }
+
+    .secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid #19d3ff;
+    }
+
+    .section {
+      padding: 40px 5%;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .markets {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: #0d1c30;
+      padding: 22px;
+      border-radius: 12px;
+      border: 1px solid #1d344e;
+    }
+
+    .coin {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .price {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .up {
+      color: #22d69b;
+    }
+
+    .trade-box {
+      max-width: 650px;
+      margin: auto;
+      background: #0d1c30;
+      padding: 25px;
+      border-radius: 14px;
+      border: 1px solid #1d344e;
+    }
+
+    .trade-box input,
+    .trade-box select {
+      width: 100%;
+      padding: 14px;
+      margin: 8px 0 15px;
+      border-radius: 7px;
+      border: 1px solid #29445f;
+      background: #07111f;
+      color: white;
+    }
+
+    .trade-buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    .buy {
+      flex: 1;
+      background: #22d69b;
+      color: #001b13;
+    }
+
+    .sell {
+      flex: 1;
+      background: #ff5364;
+      color: white;
+    }
+
+    .account {
+      text-align: center;
+      background: #0d1c30;
+      margin: 20px 5%;
+      padding: 40px 20px;
+      border-radius: 15px;
+      border: 1px solid #1d344e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #8293a7;
+      border-top: 1px solid #1c3048;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      nav a {
+        margin-left: 8px;
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="demo">
-    DEMO / TEST PLATFORM — NO REAL MONEY OR CRYPTO DEPOSITS ARE PROCESSED
-</div>
-
-<header>
-
-    <div class="logo">
-        DanielX-<span>BTC</span>
-    </div>
+  <header>
+    <div class="logo">DanielX-BTC</div>
 
     <nav>
-        <a href="#home">Home</a>
-        <a href="#market">Market</a>
-        <a href="#trade">Trade</a>
-        <a href="#features">Features</a>
-        <a href="#login" class="login">Login</a>
+      <a href="#markets">Markets</a>
+      <a href="#trading">Trade</a>
+      <a href="#account">Account</a>
     </nav>
+  </header>
 
-</header>
-
-
-<section class="hero" id="home">
-
-    <h1>
-        Trade Smarter With
-        <span>DanielX-BTC</span>
-    </h1>
+  <section class="hero">
+    <h1>Trade Crypto with <span>DanielX-BTC</span></h1>
 
     <p>
-        Explore cryptocurrency markets, monitor digital assets
-        and experience a modern crypto exchange interface.
+      Explore digital assets, monitor crypto markets and manage your
+      trading journey from one simple platform.
     </p>
 
     <div class="buttons">
-        <a href="#market" class="btn primary">
-            View Market
-        </a>
-
-        <a href="#trade" class="btn secondary">
-            Start Trading
-        </a>
+      <button class="primary" onclick="openAccount()">Open Account</button>
+      <button class="secondary" onclick="goToMarkets()">View Markets</button>
     </div>
+  </section>
 
-</section>
+  <section class="section" id="markets">
+    <h2>Live Markets</h2>
 
+    <div class="markets">
 
-<section class="container" id="market">
+      <div class="card">
+        <div class="coin">₿ Bitcoin</div>
+        <div class="price">$67,450</div>
+        <div class="up">+2.41%</div>
+      </div>
 
-    <h2 class="title">
-        Crypto Market
-    </h2>
+      <div class="card">
+        <div class="coin">XRP</div>
+        <div class="price">$2.51</div>
+        <div class="up">+3.18%</div>
+      </div>
 
-    <input
-        type="text"
-        id="search"
-        class="search"
-        placeholder="Search BTC, XRP, SOL, ETH..."
-        onkeyup="searchCoins()"
-    >
-
-    <div class="cards" id="coinCards">
-
-        <div class="card coin-card" data-name="bitcoin btc">
-
-            <div class="coin">
-                <div class="coin-name">₿ Bitcoin</div>
-                <div class="symbol">BTC</div>
-            </div>
-
-            <div class="price" id="btcPrice">
-                Loading...
-            </div>
-
-            <div class="change" id="btcChange">
-                Loading...
-            </div>
-
-            <div class="trade-buttons">
-                <button class="buy" onclick="openTrade('BTC','BUY')">
-                    Buy
-                </button>
-
-                <button class="sell" onclick="openTrade('BTC','SELL')">
-                    Sell
-                </button>
-            </div>
-
-        </div>
-
-
-        <div class="card coin-card" data-name="xrp">
-
-            <div class="coin">
-                <div class="coin-name">XRP</div>
-                <div class="symbol">XRP</div>
-            </div>
-
-            <div class="price" id="xrpPrice">
-                Loading...
-            </div>
-
-            <div class="change" id="xrpChange">
-                Loading...
-            </div>
-
-            <div class="trade-buttons">
-                <button class="buy" onclick="openTrade('XRP','BUY')">
-                    Buy
-                </button>
-
-                <button class="sell" onclick="openTrade('XRP','SELL')">
-                    Sell
-                </button>
-            </div>
-
-        </div>
-
-
-        <div class="card coin-card" data-name="solana sol">
-
-            <div class="coin">
-                <div class="coin-name">◎ Solana</div>
-                <div class="symbol">SOL</div>
-            </div>
-
-            <div class="price" id="solPrice">
-                Loading...
-            </div>
-
-            <div class="change" id="solChange">
-                Loading...
-            </div>
-
-            <div class="trade-buttons">
-                <button class="buy" onclick="openTrade('SOL','BUY')">
-                    Buy
-                </button>
-
-                <button class="sell" onclick="openTrade('SOL','SELL')">
-                    Sell
-                </button>
-            </div>
-
-        </div>
-
-
-        <div class="card coin-card" data-name="ethereum eth">
-
-            <div class="coin">
-                <div class="coin-name">Ξ Ethereum</div>
-                <div class="symbol">ETH</div>
-            </div>
-
-            <div class="price" id="ethPrice">
-                Loading...
-            </div>
-
-            <div class="change" id="ethChange">
-                Loading...
-            </div>
-
-            <div class="trade-buttons">
-                <button class="buy" onclick="openTrade('ETH','BUY')">
-                    Buy
-                </button>
-
-                <button class="sell" onclick="openTrade('ETH','SELL')">
-                    Sell
-                </button>
-            </div>
-
-        </div>
+      <div class="card">
+        <div class="coin">SOL</div>
+        <div class="price">$154.20</div>
+        <div class="up">+4.07%</div>
+      </div>
 
     </div>
+  </section>
 
-    <div class="status" id="status">
-        Market data is loading...
-    </div>
+  <section class="section" id="trading">
+    <h2>Trading Panel</h2>
 
-</section>
+    <div class="trade-box">
 
+      <label>Choose Asset</label>
 
-<section class="container" id="trade">
+      <select id="asset">
+        <option>Bitcoin (BTC)</option>
+        <option>XRP</option>
+        <option>Solana (SOL)</option>
+      </select>
 
-    <h2 class="title">
-        Trading Panel
-    </h2>
+      <label>Amount</label>
 
-    <div class="panel">
+      <input
+        type="number"
+        id="amount"
+        placeholder="Enter amount"
+      >
 
-        <h2 id="tradeTitle">
-            Select Buy or Sell
-        </h2>
+      <div class="trade-buttons">
+        <button class="buy" onclick="buyCrypto()">BUY</button>
+        <button class="sell" onclick="sellCrypto()">SELL</button>
+      </div>
 
-        <input
-            class="input"
-            id="tradeCoin"
-            placeholder="Coin"
-            readonly
-        >
-
-        <input
-            class="input"
-            id="amount"
-            type="number"
-            placeholder="Amount"
-        >
-
-        <button
-            class="action"
-            onclick="submitTrade()"
-        >
-            Continue
-        </button>
-
-        <p
-            id="tradeMessage"
-            class="status"
-        ></p>
+      <p id="message" style="margin-top:20px;text-align:center;"></p>
 
     </div>
+  </section>
 
-</section>
+  <section class="account" id="account">
 
+    <h2>Open Your DanielX-BTC Account</h2>
 
-<section class="container" id="login">
+    <p style="margin:15px 0;color:#b8c5d4;">
+      Create your account to access the trading platform.
+    </p>
 
-    <h2 class="title">
-        Account
-    </h2>
+    <button class="primary" onclick="openAccount()">
+      Create Account
+    </button>
 
-    <div class="panel">
+  </section>
 
-        <h2>Login / Sign Up</h2>
+  <footer>
+    <p>© 2026 DanielX-BTC. All rights reserved.</p>
+    <p style="margin-top:8px;">Crypto trading involves risk. Trade responsibly.</p>
+  </footer>
 
-        <input
-            class="input"
-            type="email"
-            placeholder="Email address"
-        >
+  <script>
 
-        <input
-            class="input"
-            type="password"
-            placeholder="Password"
-        >
-
-        <button
-            class="action"
-            onclick="demoLogin()"
-        >
-            Login
-        </button>
-
-        <p
-            id="loginMessage"
-            class="status"
-        ></p>
-
-    </div>
-
-</section>
-
-
-<section class="features" id="features">
-
-    <div class="container">
-
-        <h2 class="title">
-            DanielX-BTC Features
-        </h2>
-
-        <div class="feature-grid">
-
-            <div class="feature">
-                <h3>📊 Live Market</h3>
-                <p>
-                    View cryptocurrency market information
-                    directly on the website.
-                </p>
-            </div>
-
-            <div class="feature">
-                <h3>🔎 Search</h3>
-                <p>
-                    Quickly find supported assets using
-                    the market search box.
-                </p>
-            </div>
-
-            <div class="feature">
-                <h3>💱 Buy & Sell UI</h3>
-                <p>
-                    Test the trading interface before
-                    connecting real exchange infrastructure.
-                </p>
-            </div>
-
-            <div class="feature">
-                <h3>📱 Mobile Ready</h3>
-                <p>
-                    Designed to work on phones, tablets
-                    and desktop screens.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<footer>
-    © 2026 DanielX-BTC — Demo Platform
-</footer>
-
-
-<script>
-
-/* ============================
-   MARKET DATA
-============================ */
-
-async function loadPrices(){
-
-    const url =
-    "https://api.coingecko.com/api/v3/simple/price" +
-    "?ids=bitcoin,xrp,solana,ethereum" +
-    "&vs_currencies=usd" +
-    "&include_24hr_change=true";
-
-    try{
-
-        const response = await fetch(url);
-
-        if(!response.ok){
-            throw new Error("Market API unavailable");
-        }
-
-        const data = await response.json();
-
-        updateCoin(
-            "btcPrice",
-            "btcChange",
-            data.bitcoin
-        );
-
-        updateCoin(
-            "xrpPrice",
-            "xrpChange",
-            data.xrp
-        );
-
-        updateCoin(
-            "solPrice",
-            "solChange",
-            data.solana
-        );
-
-        updateCoin(
-            "ethPrice",
-            "ethChange",
-            data.ethereum
-        );
-
-        document.getElementById("status").innerText =
-            "Market data loaded successfully.";
-
+    function openAccount() {
+      alert("Account registration will be available soon.");
     }
 
-    catch(error){
-
-        document.getElementById("status").innerText =
-            "Live market data is temporarily unavailable. Refresh later.";
-
-        document.getElementById("btcPrice").innerText = "Unavailable";
-        document.getElementById("xrpPrice").innerText = "Unavailable";
-        document.getElementById("solPrice").innerText = "Unavailable";
-        document.getElementById("ethPrice").innerText = "Unavailable";
+    function goToMarkets() {
+      document.getElementById("markets").scrollIntoView({
+        behavior: "smooth"
+      });
     }
-}
 
+    function buyCrypto() {
+      const asset = document.getElementById("asset").value;
+      const amount = document.getElementById("amount").value;
 
-function updateCoin(priceId,changeId,data){
-
-    if(!data){
+      if (!amount) {
+        alert("Please enter an amount.");
         return;
+      }
+
+      document.getElementById("message").innerHTML =
+        "BUY request prepared for " + amount + " of " + asset + ".";
     }
 
-    document.getElementById(priceId).innerText =
-        "$" + Number(data.usd).toLocaleString(
-            undefined,
-            {
-                minimumFractionDigits:2,
-                maximumFractionDigits:6
-            }
-        );
+    function sellCrypto() {
+      const asset = document.getElementById("asset").value;
+      const amount = document.getElementById("amount").value;
 
-    const change =
-        Number(data.usd_24h_change || 0);
-
-    const element =
-        document.getElementById(changeId);
-
-    element.innerText =
-        (change >= 0 ? "▲ " : "▼ ") +
-        change.toFixed(2) +
-        "% (24h)";
-
-    element.classList.toggle(
-        "red",
-        change < 0
-    );
-}
-
-
-/* ============================
-   SEARCH
-============================ */
-
-function searchCoins(){
-
-    const query =
-        document.getElementById("search")
-        .value
-        .toLowerCase();
-
-    const cards =
-        document.querySelectorAll(".coin-card");
-
-    cards.forEach(function(card){
-
-        const name =
-            card.getAttribute("data-name");
-
-        if(name.includes(query)){
-            card.style.display = "";
-        }else{
-            card.style.display = "none";
-        }
-
-    });
-}
-
-
-/* ============================
-   TRADE PANEL
-============================ */
-
-let selectedCoin = "";
-let selectedAction = "";
-
-function openTrade(coin,action){
-
-    selectedCoin = coin;
-    selectedAction = action;
-
-    document.getElementById("tradeCoin").value =
-        coin;
-
-    document.getElementById("tradeTitle").innerText =
-        action + " " + coin;
-
-    document.getElementById("tradeMessage").innerText =
-        "Demo mode: no real transaction will be processed.";
-
-    document.getElementById("trade")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-}
-
-
-function submitTrade(){
-
-    const amount =
-        document.getElementById("amount").value;
-
-    if(!selectedCoin){
-
-        document.getElementById("tradeMessage").innerText =
-            "Please select Buy or Sell first.";
-
+      if (!amount) {
+        alert("Please enter an amount.");
         return;
+      }
+
+      document.getElementById("message").innerHTML =
+        "SELL request prepared for " + amount + " of " + asset + ".";
     }
 
-    if(!amount || Number(amount) <= 0){
-
-        document.getElementById("tradeMessage").innerText =
-            "Enter a valid amount.";
-
-        return;
-    }
-
-    document.getElementById("tradeMessage").innerText =
-        "Demo order: " +
-        selectedAction +
-        " " +
-        amount +
-        " " +
-        selectedCoin +
-        ". No real funds were moved.";
-}
-
-
-/* ============================
-   LOGIN DEMO
-============================ */
-
-function demoLogin(){
-
-    document.getElementById("loginMessage").innerText =
-        "Demo login only. Real user accounts are not connected yet.";
-}
-
-
-/* ============================
-   START
-============================ */
-
-loadPrices();
-
-/*
-Refresh market data every 60 seconds.
-This is intentionally not high-frequency.
-*/
-
-setInterval(loadPrices,60000);
-
-</script>
+  </script>
 
 </body>
 </html>
-<!-- PORTFOLIO / WALLET SECTION -->
-<section class="container" id="portfolio">
-
-    <h2 class="title">My Portfolio</h2>
-
-    <div class="panel">
-
-        <p style="color:#9ca8c8;">Total Portfolio Balance</p>
-
-        <h1 style="font-size:38px;margin:10px 0;">
-            $10,000.00
-        </h1>
-
-        <p style="color:#28df91;">
-            +2.45% today
-        </p>
-
-        <div class="trade-buttons" style="margin-top:25px;">
-
-            <button
-                class="buy"
-                onclick="demoWallet('Deposit')">
-                Deposit
-            </button>
-
-            <button
-                class="sell"
-                onclick="demoWallet('Withdraw')">
-                Withdraw
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <h2 style="margin:40px 0 20px;">
-        My Assets
-    </h2>
-
-
-    <div class="cards">
-
-        <div class="card">
-
-            <div class="coin">
-                <div class="coin-name">₿ Bitcoin</div>
-                <div class="symbol">BTC</div>
-            </div>
-
-            <div class="price">
-                0.1500 BTC
-            </div>
-
-            <p style="color:#9ca8c8;">
-                Demo balance: $15,000
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="coin">
-                <div class="coin-name">XRP</div>
-                <div class="symbol">XRP</div>
-            </div>
-
-            <div class="price">
-                500 XRP
-            </div>
-
-            <p style="color:#9ca8c8;">
-                Demo balance: $1,250
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="coin">
-                <div class="coin-name">◎ Solana</div>
-                <div class="symbol">SOL</div>
-            </div>
-
-            <div class="price">
-                10 SOL
-            </div>
-
-            <p style="color:#9ca8c8;">
-                Demo balance: $1,500
-            </p>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="coin">
-                <div class="coin-name">US Dollar</div>
-                <div class="symbol">USD</div>
-            </div>
-
-            <div class="price">
-                $2,250
-            </div>
-
-            <p style="color:#9ca8c8;">
-                Available demo balance
-            </p>
-
-        </div>
-
-    </div>
-
-
-    <h2 style="margin:45px 0 20px;">
-        Recent Transactions
-    </h2>
-
-
-    <div class="panel">
-
-        <p style="padding:15px 0;border-bottom:1px solid #26345d;">
-            🟢 Received XRP
-            <span style="float:right;">
-                +500 XRP
-            </span>
-        </p>
-
-        <p style="padding:15px 0;border-bottom:1px solid #26345d;">
-            🔴 Sold SOL
-            <span style="float:right;">
-                -2 SOL
-            </span>
-        </p>
-
-        <p style="padding:15px 0;">
-            🟢 Bought BTC
-            <span style="float:right;">
-                +0.05 BTC
-            </span>
-        </p>
-
-    </div>
-
-
-    <div
-        id="walletMessage"
-        class="status">
-    </div>
-
-</section>
-
-
-<script>
-
-function demoWallet(action){
-
-    document.getElementById("walletMessage").innerText =
-        action +
-        " selected. This is currently demo mode and does not move real money or cryptocurrency.";
-
-}
-
-</script>
-
-
