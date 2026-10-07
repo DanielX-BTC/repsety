@@ -1,1 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DanielX Properties | Real Estate Nigeria</title>
 
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+  background:#f5f7fa;
+  color:#172033;
+}
+
+header{
+  background:#071a35;
+  color:white;
+  padding:18px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:#f5b400;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin-left:18px;
+  font-size:14px;
+}
+
+.hero{
+  min-height:480px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px;
+  background:
+  linear-gradient(rgba(0,20,45,.72),rgba(0,20,45,.72)),
+  url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80")
+  center/cover;
+}
+
+.hero-content{
+  max-width:800px;
+  color:white;
+}
+
+.hero h1{
+  font-size:46px;
+  margin-bottom:15px;
+}
+
+.hero p{
+  font-size:18px;
+  margin-bottom:30px;
+}
+
+.search-box{
+  background:white;
+  padding:15px;
+  border-radius:12px;
+  display:grid;
+  grid-template-columns:1fr 1fr 1fr auto;
+  gap:10px;
+}
+
+.search-box select,
+.search-box input,
+.search-box button{
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:7px;
+}
+
+.search-box button{
+  background:#f5b400;
+  border:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+section{
+  padding:55px 6%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.section-title h2{
+  font-size:32px;
+  color:#071a35;
+}
+
+.section-title p{
+  margin-top:8px;
+  color:#666;
+}
+
+.properties{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.card{
+  background:white;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,.08);
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card img{
+  width:100%;
+  height:210px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.badge{
+  display:inline-block;
+  background:#071a35;
+  color:white;
+  padding:6px 10px;
+  border-radius:20px;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.location{
+  color:#777;
+  margin-bottom:12px;
+}
+
+.price{
+  color:#d99b00;
+  font-size:22px;
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.details{
+  display:flex;
+  justify-content:space-between;
+  color:#666;
+  font-size:14px;
+  margin-bottom:18px;
+}
+
+.btn{
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  padding:12px;
+  border-radius:7px;
+  font-weight:bold;
+}
+
+.whatsapp{
+  background:#25D366;
+  color:white;
+}
+
+.categories{
+  background:#071a35;
+  color:white;
+}
+
+.category-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.category{
+  padding:30px 15px;
+  text-align:center;
+  background:#102a4d;
+  border-radius:12px;
+}
+
+.category .icon{
+  font-size:40px;
+  margin-bottom:10px;
+}
+
+.ad{
+  max-width:1000px;
+  height:120px;
+  margin:auto;
+  border:2px dashed #bbb;
+  background:white;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#888;
+  border-radius:10px;
+}
+
+.about{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+}
+
+.about img{
+  width:100%;
+  border-radius:15px;
+}
+
+.about h2{
+  font-size:32px;
+  margin-bottom:15px;
+  color:#071a35;
+}
+
+.about p{
+  line-height:1.8;
+  color:#555;
+}
+
+.list-property{
+  background:linear-gradient(135deg,#071a35,#123b68);
+  color:white;
+  text-align:center;
+  border-radius:18px;
+  padding:55px 20px;
+}
+
+.list-property h2{
+  font-size:32px;
+  margin-bottom:12px;
+}
+
+.list-property p{
+  margin-bottom:25px;
+}
+
+.gold-btn{
+  display:inline-block;
+  padding:14px 25px;
+  background:#f5b400;
+  color:#111;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+footer{
+  background:#041225;
+  color:white;
+  padding:40px 6%;
+  text-align:center;
+}
+
+footer h2{
+  margin-bottom:10px;
+}
+
+footer p{
+  color:#bfc7d4;
+  margin:8px;
+}
+
+.social{
+  margin-top:20px;
+}
+
+.social a{
+  color:white;
+  text-decoration:none;
+  margin:10px;
+}
+
+@media(max-width:850px){
+
+  header{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  nav a{
+    margin:0 7px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .search-box{
+    grid-template-columns:1fr;
+  }
+
+  .properties{
+    grid-template-columns:1fr;
+  }
+
+  .category-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .about{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:500px){
+
+  section{
+    padding:40px 5%;
+  }
+
+  .category-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    min-height:550px;
+  }
+
+  .hero h1{
+    font-size:30px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    DanielX <span>Properties</span>
+  </div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#properties">Properties</a>
+    <a href="#categories">Categories</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-content">
+
+    <h1>Find Your Dream Property</h1>
+
+    <p>
+      Houses, apartments, land and commercial properties across Nigeria.
+    </p>
+
+    <div class="search-box">
+
+      <input
+        type="text"
+        id="location"
+        placeholder="Enter location"
+      >
+
+      <select id="type">
+
+        <option value="">Property Type</option>
+
+        <option>House</option>
+
+        <option>Apartment</option>
+
+        <option>Land</option>
+
+        <option>Commercial</option>
+
+      </select>
+
+      <select id="price">
+
+        <option value="">Price Range</option>
+
+        <option>Below ₦20M</option>
+
+        <option>₦20M - ₦50M</option>
+
+        <option>₦50M - ₦100M</option>
+
+        <option>Above ₦100M</option>
+
+      </select>
+
+      <button onclick="searchProperty()">
+        Search
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ADVERTISEMENT -->
+
+<section>
+
+  <div class="ad">
+    Advertisement Space
+  </div>
+
+</section>
+
+
+<!-- FEATURED PROPERTIES -->
+
+<section id="properties">
+
+  <div class="section-title">
+
+    <h2>Featured Properties</h2>
+
+    <p>Explore some of our latest property listings.</p>
+
+  </div>
+
+
+  <div class="properties">
+
+    <div class="card">
+
+      <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=900&q=80">
+
+      <div class="card-content">
+
+        <span class="badge">FOR SALE</span>
+
+        <h3>Modern Luxury Duplex</h3>
+
+        <p class="location">📍 Enugu, Nigeria</p>
+
+        <div class="price">₦85,000,000</div>
+
+        <div class="details">
+          <span>🛏 5 Beds</span>
+          <span>🚿 5 Baths</span>
+          <span>📐 500m²</span>
+        </div>
+
+        <a
+          class="btn whatsapp"
+          href="https://wa.me/2349074211002?text=Hello%20DanielX%20Properties,%20I%20am%20interested%20in%20the%20Modern%20Luxury%20Duplex."
+        >
+          WhatsApp Agent
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80">
+
+      <div class="card-content">
+
+        <span class="badge">FOR RENT</span>
+
+        <h3>Luxury 3 Bedroom Apartment</h3>
+
+        <p class="location">📍 Lagos, Nigeria</p>
+
+        <div class="price">₦6,500,000 / year</div>
+
+        <div class="details">
+          <span>🛏 3 Beds</span>
+          <span>🚿 3 Baths</span>
+          <span>📐 220m²</span>
+        </div>
+
+        <a
+          class="btn whatsapp"
+          href="https://wa.me/2349074211002?text=Hello%20DanielX%20Properties,%20I%20am%20interested%20in%20the%203%20Bedroom%20Apartment."
+        >
+          WhatsApp Agent
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="card">
+
+      <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80">
+
+      <div class="card-content">
+
+        <span class="badge">LAND</span>
+
+        <h3>Residential Land</h3>
+
+        <p class="location">📍 Abuja, Nigeria</p>
+
+        <div class="price">₦25,000,000</div>
+
+        <div class="details">
+          <span>📐 600m²</span>
+          <span>📜 Verified</span>
+          <span>🏗 Residential</span>
+        </div>
+
+        <a
+          class="btn whatsapp"
+          href="https://wa.me/2349074211002?text=Hello%20DanielX%20Properties,%20I%20am%20interested%20in%20the%20Residential%20Land."
+        >
+          WhatsApp Agent
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="categories" id="categories">
+
+  <div class="section-title">
+
+    <h2 style="color:white;">Browse By Category</h2>
+
+    <p style="color:#ccd5e2;">
+      Find the property that matches your needs.
+    </p>
+
+  </div>
+
+
+  <div class="category-grid">
+
+    <div class="category">
+
+      <div class="icon">🏠</div>
+
+      <h3>Houses</h3>
+
+      <p>Find your perfect home.</p>
+
+    </div>
+
+
+    <div class="category">
+
+      <div class="icon">🏢</div>
+
+      <h3>Apartments</h3>
+
+      <p>Modern apartments.</p>
+
+    </div>
+
+
+    <div class="category">
+
+      <div class="icon">🌳</div>
+
+      <h3>Land</h3>
+
+      <p>Land for investment.</p>
+
+    </div>
+
+
+    <div class="category">
+
+      <div class="icon">🏬</div>
+
+      <h3>Commercial</h3>
+
+      <p>Business properties.</p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="about">
+
+    <img
+      src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80"
+    >
+
+    <div>
+
+      <h2>Welcome to DanielX Properties</h2>
+
+      <p>
+        DanielX Properties is a real-estate platform designed to help
+        buyers, sellers, landlords and investors discover property
+        opportunities across Nigeria.
+      </p>
+
+      <br>
+
+      <p>
+        Browse properties, contact agents and discover your next
+        investment opportunity.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LIST PROPERTY -->
+
+<section>
+
+  <div class="list-property">
+
+    <h2>Have a Property to Sell?</h2>
+
+    <p>
+      List your house, apartment, land or commercial property on
+      DanielX Properties.
+    </p>
+
+    <a
+      class="gold-btn"
+      href="https://wa.me/2349074211002?text=Hello%20DanielX%20Properties,%20I%20want%20to%20list%20my%20property."
+    >
+      List Your Property
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+  <div class="section-title">
+
+    <h2>Contact DanielX Properties</h2>
+
+    <p>Ready to find your next property?</p>
+
+  </div>
+
+  <div style="text-align:center;">
+
+    <a
+      class="gold-btn"
+      href="https://wa.me/2349074211002?text=Hello%20DanielX%20Properties,%20I%20need%20help%20finding%20a%20property."
+    >
+      💬 Chat on WhatsApp
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h2>DanielX Properties</h2>
+
+  <p>Your Property. Your Future.</p>
+
+  <p>© 2026 DanielX Properties. All Rights Reserved.</p>
+
+  <div class="social">
+
+    <a href="#home">Home</a>
+
+    <a href="#properties">Properties</a>
+
+    <a href="#contact">Contact</a>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+function searchProperty(){
+
+  const location =
+    document.getElementById("location").value;
+
+  const type =
+    document.getElementById("type").value;
+
+  const price =
+    document.getElementById("price").value;
+
+  let message = "Searching properties";
+
+  if(location){
+    message += " in " + location;
+  }
+
+  if(type){
+    message += " | Type: " + type;
+  }
+
+  if(price){
+    message += " | Price: " + price;
+  }
+
+  alert(message + ". More listings will be added soon!");
+
+  document.getElementById("properties")
+    .scrollIntoView({behavior:"smooth"});
+
+}
+
+</script>
+
+</body>
+</html>
