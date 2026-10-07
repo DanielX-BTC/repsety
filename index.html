@@ -3,230 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>DanielX-BTC | Live Crypto Market & News</title>
-
-<meta name="description"
-content="DanielX-BTC provides live cryptocurrency prices, market statistics and the latest crypto news.">
+<title>DanielX-BTC | Crypto Market</title>
 
 <style>
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
   background: #07111f;
   color: white;
 }
 
 header {
-  background: #0b1728;
-  padding: 18px;
-  border-bottom: 1px solid #22344d;
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  background: #0b1b30;
+  padding: 18px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #203957;
 }
 
 .logo {
-  font-size: 25px;
+  font-size: 24px;
   font-weight: bold;
-}
-
-.logo span {
-  color: #20d6ff;
-}
-
-nav {
-  margin-top: 12px;
+  color: #21d4fd;
 }
 
 nav a {
-  color: #b9c7d8;
+  color: white;
   text-decoration: none;
-  margin-right: 18px;
+  margin-left: 18px;
   font-size: 14px;
 }
 
 nav a:hover {
-  color: #20d6ff;
+  color: #21d4fd;
 }
 
 .hero {
-  padding: 45px 20px;
+  padding: 55px 5%;
   text-align: center;
-  background: linear-gradient(135deg, #081827, #0b2037);
+  background: linear-gradient(135deg,#081827,#102d4a);
 }
 
 .hero h1 {
   font-size: 38px;
-  margin-bottom: 12px;
-}
-
-.hero h1 span {
-  color: #20d6ff;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  color: #aebdd0;
-  max-width: 700px;
-  margin: auto;
-  line-height: 1.6;
+  color: #b8c7d9;
+  margin-bottom: 25px;
+}
+
+button {
+  border: none;
+  padding: 13px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.primary {
+  background: #21d4fd;
+  color: #00101c;
+}
+
+.secondary {
+  background: #182d45;
+  color: white;
+  margin-left: 8px;
 }
 
 .container {
-  width: 94%;
+  width: 90%;
   max-width: 1200px;
   margin: 30px auto;
 }
 
 .section-title {
-  font-size: 25px;
   margin-bottom: 18px;
+  font-size: 25px;
 }
 
 .market-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
   gap: 15px;
 }
 
 .coin {
-  background: #0d1b2d;
-  border: 1px solid #20344d;
-  border-radius: 14px;
+  background: #0d2035;
+  border: 1px solid #1c3855;
+  border-radius: 12px;
   padding: 20px;
 }
 
-.coin-top {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 18px;
-}
-
-.coin-name {
-  font-weight: bold;
-}
-
-.symbol {
-  color: #8092a9;
-  font-size: 13px;
+.coin h3 {
+  margin-bottom: 10px;
 }
 
 .price {
-  font-size: 26px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.change {
+  font-size: 21px;
   font-weight: bold;
 }
 
-.green {
-  color: #25d68a;
+.cap {
+  color: #9fb0c2;
+  margin-top: 7px;
+  font-size: 13px;
 }
 
-.red {
-  color: #ff5964;
-}
-
-.market-info {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-  margin: 25px 0;
-}
-
-.info-box {
-  background: #0d1b2d;
-  padding: 20px;
+.trading {
+  background: #0d2035;
+  border: 1px solid #1c3855;
   border-radius: 14px;
-  border: 1px solid #20344d;
+  padding: 25px;
+  margin-top: 35px;
 }
 
-.info-box small {
-  color: #8294aa;
+.trade-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
 }
 
-.info-box h3 {
-  margin-top: 8px;
+.trade-box input,
+.trade-box select {
+  width: 100%;
+  padding: 14px;
+  background: #07111f;
+  color: white;
+  border: 1px solid #31506e;
+  border-radius: 7px;
+  margin-top: 7px;
+}
+
+.account {
+  text-align: center;
+  margin: 40px 0;
+  padding: 35px;
+  background: linear-gradient(135deg,#102b45,#0c1828);
+  border-radius: 15px;
 }
 
 .news {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
   gap: 18px;
 }
 
 .news-card {
-  background: #0d1b2d;
-  border: 1px solid #20344d;
-  border-radius: 14px;
+  background: #0d2035;
+  border: 1px solid #1c3855;
   padding: 20px;
+  border-radius: 12px;
 }
 
 .news-card h3 {
-  font-size: 18px;
-  line-height: 1.4;
-  margin-bottom: 12px;
-}
-
-.news-card a {
-  color: white;
-  text-decoration: none;
-}
-
-.news-card a:hover {
-  color: #20d6ff;
-}
-
-.news-source {
-  color: #20d6ff;
-  font-size: 13px;
   margin-bottom: 10px;
+  color: #21d4fd;
 }
 
-.news-date {
-  color: #7e91a8;
-  font-size: 12px;
-}
-
-.loading {
-  color: #91a3b8;
-  padding: 20px;
-}
-
-.error {
-  color: #ff6670;
-  padding: 20px;
+.news-card p {
+  color: #b8c7d9;
+  line-height: 1.5;
 }
 
 footer {
   margin-top: 50px;
-  padding: 30px 20px;
+  padding: 25px;
   text-align: center;
   background: #050c15;
-  color: #718197;
-  line-height: 1.7;
+  color: #8798aa;
 }
 
-.disclaimer {
-  max-width: 850px;
-  margin: 15px auto 0;
-  font-size: 12px;
+.status {
+  text-align: center;
+  margin: 20px;
+  color: #21d4fd;
 }
 
 @media(max-width:600px) {
   .hero h1 {
-    font-size: 30px;
+    font-size: 29px;
   }
 
-  .price {
-    font-size: 23px;
+  nav a {
+    margin-left: 7px;
+    font-size: 12px;
+  }
+
+  .trade-box {
+    grid-template-columns: 1fr;
   }
 }
 </style>
@@ -235,456 +209,271 @@ footer {
 <body>
 
 <header>
-  <div class="logo">DanielX-<span>BTC</span></div>
+  <div class="logo">⚡ DanielX-BTC</div>
 
   <nav>
     <a href="#market">Market</a>
+    <a href="#trade">Trade</a>
     <a href="#news">News</a>
-    <a href="#about">About</a>
+    <a href="#account">Account</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Live <span>Crypto Market</span></h1>
+  <h1>DanielX-BTC</h1>
+  <p>Crypto Market • Live Prices • Market Cap • Trading Information</p>
 
-  <p>
-    Track cryptocurrency prices, market movements and the latest
-    cryptocurrency news in one place.
-  </p>
+  <button class="primary" onclick="showAccount()">
+    Create Account
+  </button>
+
+  <button class="secondary" onclick="document.getElementById('market').scrollIntoView()">
+    View Market
+  </button>
 </section>
 
-<main>
+<div class="status" id="status">
+  Loading live cryptocurrency market...
+</div>
 
 <section class="container" id="market">
 
-  <h2 class="section-title">🔥 Live Crypto Market</h2>
+  <h2 class="section-title">Live Crypto Market</h2>
 
-  <div id="marketGrid" class="market-grid">
-    <div class="loading">Loading live market data...</div>
+  <div class="market-grid">
+
+    <div class="coin">
+      <h3>₿ Bitcoin</h3>
+      <div class="price" id="btc">$--</div>
+      <div class="cap" id="btcCap">Market Cap: --</div>
+    </div>
+
+    <div class="coin">
+      <h3>✕ XRP</h3>
+      <div class="price" id="xrp">$--</div>
+      <div class="cap" id="xrpCap">Market Cap: --</div>
+    </div>
+
+    <div class="coin">
+      <h3>◎ Solana</h3>
+      <div class="price" id="sol">$--</div>
+      <div class="cap" id="solCap">Market Cap: --</div>
+    </div>
+
+    <div class="coin">
+      <h3>Ξ Ethereum</h3>
+      <div class="price" id="eth">$--</div>
+      <div class="cap" id="ethCap">Market Cap: --</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="container trading" id="trade">
+
+  <h2 class="section-title">Trading Panel</h2>
+
+  <p style="color:#9fb0c2;">
+    Select an asset and enter an amount to simulate a trade.
+  </p>
+
+  <div class="trade-box">
+
+    <div>
+      <label>Cryptocurrency</label>
+      <select id="coinSelect">
+        <option value="btc">Bitcoin (BTC)</option>
+        <option value="xrp">XRP</option>
+        <option value="sol">Solana (SOL)</option>
+        <option value="eth">Ethereum (ETH)</option>
+      </select>
+    </div>
+
+    <div>
+      <label>Amount (USD)</label>
+      <input type="number" id="amount" placeholder="Enter amount">
+    </div>
+
   </div>
 
-  <div class="market-info">
+  <br>
 
-    <div class="info-box">
-      <small>Global Market Cap</small>
-      <h3 id="marketCap">Loading...</h3>
-    </div>
+  <button class="primary" onclick="calculateTrade()">
+    Calculate Trade
+  </button>
 
-    <div class="info-box">
-      <small>24h Market Volume</small>
-      <h3 id="marketVolume">Loading...</h3>
-    </div>
-
-    <div class="info-box">
-      <small>BTC Dominance</small>
-      <h3 id="btcDominance">Loading...</h3>
-    </div>
-
-  </div>
+  <p id="tradeResult" style="margin-top:20px;color:#21d4fd;"></p>
 
 </section>
 
+<section class="container account" id="account">
+
+  <h2>Create Your DanielX-BTC Account</h2>
+
+  <p style="margin:15px 0;color:#b8c7d9;">
+    Join DanielX-BTC and explore the cryptocurrency market.
+  </p>
+
+  <button class="primary" onclick="showAccount()">
+    Create Account
+  </button>
+
+  <p id="accountMessage" style="margin-top:20px;"></p>
+
+</section>
 
 <section class="container" id="news">
 
-  <h2 class="section-title">📰 Latest Crypto News</h2>
+  <h2 class="section-title">Crypto News</h2>
 
-  <div id="newsGrid" class="news">
+  <div class="news">
 
-    <div class="loading">
-      Loading latest crypto news...
+    <div class="news-card">
+      <h3>Bitcoin Market</h3>
+      <p>
+        Follow Bitcoin price movements and market-cap changes in real time.
+      </p>
+    </div>
+
+    <div class="news-card">
+      <h3>XRP Market</h3>
+      <p>
+        Track XRP price movements and important cryptocurrency market activity.
+      </p>
+    </div>
+
+    <div class="news-card">
+      <h3>Solana Market</h3>
+      <p>
+        Monitor SOL and other major digital assets as the market changes.
+      </p>
     </div>
 
   </div>
 
 </section>
 
-
-<section class="container" id="about">
-
-  <h2 class="section-title">About DanielX-BTC</h2>
-
-  <div class="info-box">
-
-    <p style="line-height:1.8;color:#aebdd0;">
-      DanielX-BTC is a cryptocurrency information website providing
-      market information, cryptocurrency prices and links to current
-      cryptocurrency news.
-    </p>
-
-  </div>
-
-</section>
-
-</main>
-
-
 <footer>
-
-  <strong>DanielX-BTC</strong>
-
-  <div class="disclaimer">
-    Information displayed on this website is provided for educational
-    and informational purposes only. Cryptocurrency prices can change
-    rapidly. Nothing on this website should be considered financial,
-    investment or trading advice.
-  </div>
-
-  <p style="margin-top:15px;">
-    © 2026 DanielX-BTC
-  </p>
-
+  <p>© 2026 DanielX-BTC</p>
+  <p style="margin-top:8px;">Crypto information only — not financial advice.</p>
 </footer>
-
 
 <script>
 
-/* ==========================================
-   LIVE CRYPTO MARKET
-========================================== */
-
-const coins = [
-  "bitcoin",
-  "ethereum",
-  "ripple",
-  "solana",
-  "binancecoin",
-  "tron"
-];
-
-const coinNames = {
-  bitcoin: "Bitcoin",
-  ethereum: "Ethereum",
-  ripple: "XRP",
-  solana: "Solana",
-  binancecoin: "BNB",
-  tron: "TRON"
+let prices = {
+  btc: 0,
+  xrp: 0,
+  sol: 0,
+  eth: 0
 };
-
-const symbols = {
-  bitcoin: "BTC",
-  ethereum: "ETH",
-  ripple: "XRP",
-  solana: "SOL",
-  binancecoin: "BNB",
-  tron: "TRX"
-};
-
 
 async function loadMarket() {
-
-  const marketGrid = document.getElementById("marketGrid");
 
   try {
 
     const url =
-      "https://api.coingecko.com/api/v3/coins/markets" +
-      "?vs_currency=usd" +
-      "&ids=" + coins.join(",") +
-      "&order=market_cap_desc" +
-      "&per_page=6" +
-      "&page=1" +
-      "&sparkline=false" +
-      "&price_change_percentage=24h";
+    "https://api.coingecko.com/api/v3/coins/markets" +
+    "?vs_currency=usd&ids=bitcoin,ripple,solana,ethereum" +
+    "&order=market_cap_desc&per_page=4&page=1&sparkline=false";
 
     const response = await fetch(url);
 
-    if (!response.ok) {
-      throw new Error("Market API error");
-    }
-
     const data = await response.json();
-
-    marketGrid.innerHTML = "";
 
     data.forEach(coin => {
 
-      const change = coin.price_change_percentage_24h || 0;
+      if (coin.id === "bitcoin") {
+        prices.btc = coin.current_price;
 
-      const card = document.createElement("div");
+        document.getElementById("btc").innerText =
+          "$" + coin.current_price.toLocaleString();
 
-      card.className = "coin";
-
-      card.innerHTML = `
-        <div class="coin-top">
-          <div class="coin-name">
-            ${coinNames[coin.id]}
-          </div>
-
-          <div class="symbol">
-            ${symbols[coin.id]}
-          </div>
-        </div>
-
-        <div class="price">
-          $${formatPrice(coin.current_price)}
-        </div>
-
-        <div class="${change >= 0 ? "change green" : "change red"}">
-          ${change >= 0 ? "+" : ""}
-          ${change.toFixed(2)}%
-          <span style="color:#718197;font-weight:normal">
-            24h
-          </span>
-        </div>
-      `;
-
-      marketGrid.appendChild(card);
-
-    });
-
-  } catch(error) {
-
-    marketGrid.innerHTML = `
-      <div class="error">
-        Live market data could not be loaded right now.
-        Please refresh the page.
-      </div>
-    `;
-
-  }
-
-}
-
-
-/* Format crypto prices */
-
-function formatPrice(price) {
-
-  if (price >= 1000) {
-    return price.toLocaleString(
-      "en-US",
-      {
-        maximumFractionDigits: 2
+        document.getElementById("btcCap").innerText =
+          "Market Cap: $" + coin.market_cap.toLocaleString();
       }
-    );
-  }
 
-  if (price >= 1) {
-    return price.toFixed(2);
-  }
+      if (coin.id === "ripple") {
+        prices.xrp = coin.current_price;
 
-  return price.toFixed(6);
+        document.getElementById("xrp").innerText =
+          "$" + coin.current_price.toLocaleString();
 
-}
+        document.getElementById("xrpCap").innerText =
+          "Market Cap: $" + coin.market_cap.toLocaleString();
+      }
 
+      if (coin.id === "solana") {
+        prices.sol = coin.current_price;
 
-/* ==========================================
-   GLOBAL MARKET DATA
-========================================== */
+        document.getElementById("sol").innerText =
+          "$" + coin.current_price.toLocaleString();
 
-async function loadGlobalMarket() {
+        document.getElementById("solCap").innerText =
+          "Market Cap: $" + coin.market_cap.toLocaleString();
+      }
 
-  try {
+      if (coin.id === "ethereum") {
+        prices.eth = coin.current_price;
 
-    const response =
-      await fetch(
-        "https://api.coingecko.com/api/v3/global"
-      );
+        document.getElementById("eth").innerText =
+          "$" + coin.current_price.toLocaleString();
 
-    if (!response.ok) {
-      throw new Error("Global API error");
-    }
-
-    const result = await response.json();
-
-    const data = result.data;
-
-    document.getElementById("marketCap").textContent =
-      "$" +
-      formatLargeNumber(
-        data.total_market_cap.usd
-      );
-
-    document.getElementById("marketVolume").textContent =
-      "$" +
-      formatLargeNumber(
-        data.total_volume.usd
-      );
-
-    document.getElementById("btcDominance").textContent =
-      data.market_cap_percentage.btc.toFixed(2)
-      + "%";
-
-  } catch(error) {
-
-    document.getElementById("marketCap")
-      .textContent = "Unavailable";
-
-    document.getElementById("marketVolume")
-      .textContent = "Unavailable";
-
-    document.getElementById("btcDominance")
-      .textContent = "Unavailable";
-
-  }
-
-}
-
-
-function formatLargeNumber(number) {
-
-  if (number >= 1e12) {
-    return (number / 1e12).toFixed(2) + "T";
-  }
-
-  if (number >= 1e9) {
-    return (number / 1e9).toFixed(2) + "B";
-  }
-
-  if (number >= 1e6) {
-    return (number / 1e6).toFixed(2) + "M";
-  }
-
-  return number.toLocaleString();
-
-}
-
-
-/* ==========================================
-   LIVE CRYPTO NEWS
-========================================== */
-
-async function loadNews() {
-
-  const newsGrid =
-    document.getElementById("newsGrid");
-
-  try {
-
-    const rssUrl =
-      "https://www.coindesk.com/arc/outboundfeeds/rss/";
-
-    const proxy =
-      "https://api.rss2json.com/v1/api.json?rss_url="
-      + encodeURIComponent(rssUrl);
-
-    const response = await fetch(proxy);
-
-    if (!response.ok) {
-      throw new Error("News error");
-    }
-
-    const result = await response.json();
-
-    if (!result.items || result.items.length === 0) {
-      throw new Error("No news");
-    }
-
-    newsGrid.innerHTML = "";
-
-    result.items.slice(0, 12).forEach(item => {
-
-      const card =
-        document.createElement("article");
-
-      card.className = "news-card";
-
-      const date =
-        new Date(item.pubDate);
-
-      card.innerHTML = `
-
-        <div class="news-source">
-          CoinDesk
-        </div>
-
-        <h3>
-          <a
-            href="${item.link}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ${escapeHTML(item.title)}
-          </a>
-        </h3>
-
-        <div class="news-date">
-          ${date.toLocaleString()}
-        </div>
-
-      `;
-
-      newsGrid.appendChild(card);
+        document.getElementById("ethCap").innerText =
+          "Market Cap: $" + coin.market_cap.toLocaleString();
+      }
 
     });
 
-  } catch(error) {
+    document.getElementById("status").innerText =
+      "● Live market data connected";
 
-    newsGrid.innerHTML = `
+  } catch (error) {
 
-      <div class="error">
-
-        Live news could not be loaded right now.
-
-        <br><br>
-
-        <a
-          href="https://www.coindesk.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style="color:#20d6ff"
-        >
-          View current crypto news
-        </a>
-
-      </div>
-
-    `;
+    document.getElementById("status").innerText =
+      "Market data temporarily unavailable. Refresh the page.";
 
   }
+}
+
+function calculateTrade() {
+
+  const coin = document.getElementById("coinSelect").value;
+
+  const amount =
+    parseFloat(document.getElementById("amount").value);
+
+  if (!amount || amount <= 0) {
+
+    document.getElementById("tradeResult").innerText =
+      "Please enter a valid amount.";
+
+    return;
+  }
+
+  const quantity = amount / prices[coin];
+
+  document.getElementById("tradeResult").innerText =
+    "Estimated quantity: " + quantity.toFixed(6) + " " +
+    coin.toUpperCase();
 
 }
 
+function showAccount() {
 
-/* Protect the page from HTML inside news titles */
+  document.getElementById("accountMessage").innerText =
+    "Account registration is coming soon.";
 
-function escapeHTML(text) {
-
-  const div = document.createElement("div");
-
-  div.textContent = text;
-
-  return div.innerHTML;
+  document.getElementById("account").scrollIntoView({
+    behavior: "smooth"
+  });
 
 }
-
-
-/* ==========================================
-   START
-========================================== */
 
 loadMarket();
 
-loadGlobalMarket();
-
-loadNews();
-
-
-/*
-  Refresh market data every 60 seconds.
-*/
-
-setInterval(() => {
-
-  loadMarket();
-
-  loadGlobalMarket();
-
-}, 60000);
-
-
-/*
-  Refresh news every 5 minutes.
-*/
-
-setInterval(() => {
-
-  loadNews();
-
-}, 300000);
+setInterval(loadMarket, 60000);
 
 </script>
 
 </body>
-</html>
+</html>      
