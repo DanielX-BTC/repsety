@@ -1,336 +1,475 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DanielX-BTC | Crypto Exchange</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DanielX-BTC | Crypto Exchange</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
 
-    body {
-      background: #07111f;
-      color: white;
-    }
+body{
+background:#07111f;
+color:white;
+}
 
-    header {
-      background: #0b1728;
-      padding: 18px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #1c3048;
-    }
+header{
+background:#0b1728;
+padding:18px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:1px solid #1c3048;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #19d3ff;
-    }
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#19d3ff;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 14px;
-    }
+nav a{
+color:white;
+text-decoration:none;
+margin-left:18px;
+font-size:14px;
+}
 
-    .hero {
-      padding: 60px 5%;
-      text-align: center;
-      background: linear-gradient(135deg, #07111f, #102a45);
-    }
+.hero{
+padding:60px 5%;
+text-align:center;
+background:linear-gradient(135deg,#07111f,#102a45);
+}
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-    }
+.hero h1{
+font-size:42px;
+margin-bottom:15px;
+}
 
-    .hero h1 span {
-      color: #19d3ff;
-    }
+.hero h1 span{color:#19d3ff}
 
-    .hero p {
-      color: #b8c5d4;
-      max-width: 650px;
-      margin: auto;
-      line-height: 1.6;
-    }
+.hero p{
+color:#b8c5d4;
+max-width:650px;
+margin:auto;
+line-height:1.6;
+}
 
-    .buttons {
-      margin-top: 25px;
-    }
+.buttons{margin-top:25px}
 
-    button {
-      border: none;
-      padding: 14px 24px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-      margin: 5px;
-    }
+button{
+border:none;
+padding:14px 24px;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+margin:5px;
+}
 
-    .primary {
-      background: #19d3ff;
-      color: #00111c;
-    }
+.primary{
+background:#19d3ff;
+color:#00111c;
+}
 
-    .secondary {
-      background: transparent;
-      color: white;
-      border: 1px solid #19d3ff;
-    }
+.secondary{
+background:transparent;
+color:white;
+border:1px solid #19d3ff;
+}
 
-    .section {
-      padding: 40px 5%;
-    }
+.section{
+padding:40px 5%;
+}
 
-    .section h2 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
+.section h2{
+text-align:center;
+margin-bottom:25px;
+}
 
-    .markets {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
+.markets{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
 
-    .card {
-      background: #0d1c30;
-      padding: 22px;
-      border-radius: 12px;
-      border: 1px solid #1d344e;
-    }
+.card{
+background:#0d1c30;
+padding:22px;
+border-radius:12px;
+border:1px solid #1d344e;
+}
 
-    .coin {
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 12px;
-    }
+.coin{
+font-size:20px;
+font-weight:bold;
+margin-bottom:12px;
+}
 
-    .price {
-      font-size: 25px;
-      margin-bottom: 8px;
-    }
+.price{
+font-size:25px;
+margin-bottom:8px;
+}
 
-    .up {
-      color: #22d69b;
-    }
+.up{color:#22d69b}
 
-    .trade-box {
-      max-width: 650px;
-      margin: auto;
-      background: #0d1c30;
-      padding: 25px;
-      border-radius: 14px;
-      border: 1px solid #1d344e;
-    }
+.trade-box{
+max-width:650px;
+margin:auto;
+background:#0d1c30;
+padding:25px;
+border-radius:14px;
+border:1px solid #1d344e;
+}
 
-    .trade-box input,
-    .trade-box select {
-      width: 100%;
-      padding: 14px;
-      margin: 8px 0 15px;
-      border-radius: 7px;
-      border: 1px solid #29445f;
-      background: #07111f;
-      color: white;
-    }
+.trade-box input,
+.trade-box select,
+.register-box input{
+width:100%;
+padding:14px;
+margin:8px 0 15px;
+border-radius:7px;
+border:1px solid #29445f;
+background:#07111f;
+color:white;
+}
 
-    .trade-buttons {
-      display: flex;
-      gap: 10px;
-    }
+.trade-buttons{
+display:flex;
+gap:10px;
+}
 
-    .buy {
-      flex: 1;
-      background: #22d69b;
-      color: #001b13;
-    }
+.buy{
+flex:1;
+background:#22d69b;
+color:#001b13;
+}
 
-    .sell {
-      flex: 1;
-      background: #ff5364;
-      color: white;
-    }
+.sell{
+flex:1;
+background:#ff5364;
+color:white;
+}
 
-    .account {
-      text-align: center;
-      background: #0d1c30;
-      margin: 20px 5%;
-      padding: 40px 20px;
-      border-radius: 15px;
-      border: 1px solid #1d344e;
-    }
+.account{
+max-width:650px;
+margin:30px auto;
+padding:40px 25px;
+background:#0d1c30;
+border-radius:15px;
+border:1px solid #1d344e;
+}
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      color: #8293a7;
-      border-top: 1px solid #1c3048;
-      margin-top: 30px;
-    }
+.account h2{
+text-align:center;
+margin-bottom:10px;
+}
 
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 32px;
-      }
+.account p{
+text-align:center;
+color:#b8c5d4;
+margin-bottom:25px;
+}
 
-      nav a {
-        margin-left: 8px;
-        font-size: 12px;
-      }
-    }
-  </style>
+.register-box{
+display:none;
+margin-top:25px;
+}
+
+.register-box label{
+display:block;
+margin-top:8px;
+font-size:14px;
+color:#c8d4df;
+}
+
+.register-button{
+width:100%;
+background:#19d3ff;
+color:#00111c;
+margin-top:5px;
+}
+
+.login-text{
+text-align:center;
+margin-top:18px;
+font-size:14px;
+color:#9daebe;
+}
+
+footer{
+text-align:center;
+padding:25px;
+color:#8293a7;
+border-top:1px solid #1c3048;
+margin-top:30px;
+}
+
+@media(max-width:600px){
+.hero h1{font-size:32px}
+nav a{margin-left:8px;font-size:12px}
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="logo">DanielX-BTC</div>
+<header>
+<div class="logo">DanielX-BTC</div>
 
-    <nav>
-      <a href="#markets">Markets</a>
-      <a href="#trading">Trade</a>
-      <a href="#account">Account</a>
-    </nav>
-  </header>
+<nav>
+<a href="#markets">Markets</a>
+<a href="#trading">Trade</a>
+<a href="#account">Account</a>
+</nav>
+</header>
 
-  <section class="hero">
-    <h1>Trade Crypto with <span>DanielX-BTC</span></h1>
 
-    <p>
-      Explore digital assets, monitor crypto markets and manage your
-      trading journey from one simple platform.
-    </p>
+<section class="hero">
 
-    <div class="buttons">
-      <button class="primary" onclick="openAccount()">Open Account</button>
-      <button class="secondary" onclick="goToMarkets()">View Markets</button>
-    </div>
-  </section>
+<h1>Trade Crypto with <span>DanielX-BTC</span></h1>
 
-  <section class="section" id="markets">
-    <h2>Live Markets</h2>
+<p>
+Explore digital assets, monitor crypto markets and manage your
+trading journey from one simple platform.
+</p>
 
-    <div class="markets">
+<div class="buttons">
+<button class="primary" onclick="openAccount()">Open Account</button>
+<button class="secondary" onclick="goToMarkets()">View Markets</button>
+</div>
 
-      <div class="card">
-        <div class="coin">₿ Bitcoin</div>
-        <div class="price">$67,450</div>
-        <div class="up">+2.41%</div>
-      </div>
+</section>
 
-      <div class="card">
-        <div class="coin">XRP</div>
-        <div class="price">$2.51</div>
-        <div class="up">+3.18%</div>
-      </div>
 
-      <div class="card">
-        <div class="coin">SOL</div>
-        <div class="price">$154.20</div>
-        <div class="up">+4.07%</div>
-      </div>
+<section class="section" id="markets">
 
-    </div>
-  </section>
+<h2>Crypto Markets</h2>
 
-  <section class="section" id="trading">
-    <h2>Trading Panel</h2>
+<div class="markets">
 
-    <div class="trade-box">
+<div class="card">
+<div class="coin">₿ Bitcoin</div>
+<div class="price">$67,450</div>
+<div class="up">+2.41%</div>
+</div>
 
-      <label>Choose Asset</label>
+<div class="card">
+<div class="coin">XRP</div>
+<div class="price">$2.51</div>
+<div class="up">+3.18%</div>
+</div>
 
-      <select id="asset">
-        <option>Bitcoin (BTC)</option>
-        <option>XRP</option>
-        <option>Solana (SOL)</option>
-      </select>
+<div class="card">
+<div class="coin">SOL</div>
+<div class="price">$154.20</div>
+<div class="up">+4.07%</div>
+</div>
 
-      <label>Amount</label>
+</div>
+</section>
 
-      <input
-        type="number"
-        id="amount"
-        placeholder="Enter amount"
-      >
 
-      <div class="trade-buttons">
-        <button class="buy" onclick="buyCrypto()">BUY</button>
-        <button class="sell" onclick="sellCrypto()">SELL</button>
-      </div>
+<section class="section" id="trading">
 
-      <p id="message" style="margin-top:20px;text-align:center;"></p>
+<h2>Trading Panel</h2>
 
-    </div>
-  </section>
+<div class="trade-box">
 
-  <section class="account" id="account">
+<label>Choose Asset</label>
 
-    <h2>Open Your DanielX-BTC Account</h2>
+<select id="asset">
+<option>Bitcoin (BTC)</option>
+<option>XRP</option>
+<option>Solana (SOL)</option>
+</select>
 
-    <p style="margin:15px 0;color:#b8c5d4;">
-      Create your account to access the trading platform.
-    </p>
+<label>Amount</label>
 
-    <button class="primary" onclick="openAccount()">
-      Create Account
-    </button>
+<input
+type="number"
+id="amount"
+placeholder="Enter amount"
+>
 
-  </section>
+<div class="trade-buttons">
 
-  <footer>
-    <p>© 2026 DanielX-BTC. All rights reserved.</p>
-    <p style="margin-top:8px;">Crypto trading involves risk. Trade responsibly.</p>
-  </footer>
+<button class="buy" onclick="buyCrypto()">BUY</button>
 
-  <script>
+<button class="sell" onclick="sellCrypto()">SELL</button>
 
-    function openAccount() {
-      alert("Account registration will be available soon.");
-    }
+</div>
 
-    function goToMarkets() {
-      document.getElementById("markets").scrollIntoView({
-        behavior: "smooth"
-      });
-    }
+<p id="message" style="margin-top:20px;text-align:center;"></p>
 
-    function buyCrypto() {
-      const asset = document.getElementById("asset").value;
-      const amount = document.getElementById("amount").value;
+</div>
+</section>
 
-      if (!amount) {
-        alert("Please enter an amount.");
-        return;
-      }
 
-      document.getElementById("message").innerHTML =
-        "BUY request prepared for " + amount + " of " + asset + ".";
-    }
+<section class="account" id="account">
 
-    function sellCrypto() {
-      const asset = document.getElementById("asset").value;
-      const amount = document.getElementById("amount").value;
+<h2>Open Your DanielX-BTC Account</h2>
 
-      if (!amount) {
-        alert("Please enter an amount.");
-        return;
-      }
+<p>Create your account to access the platform.</p>
 
-      document.getElementById("message").innerHTML =
-        "SELL request prepared for " + amount + " of " + asset + ".";
-    }
+<button
+class="primary"
+onclick="openAccount()"
+>
+Create Account
+</button>
 
-  </script>
+
+<div class="register-box" id="registerBox">
+
+<label>Full Name</label>
+<input
+type="text"
+id="fullname"
+placeholder="Enter your full name"
+>
+
+<label>Email Address</label>
+<input
+type="email"
+id="email"
+placeholder="Enter your email"
+>
+
+<label>Phone Number</label>
+<input
+type="tel"
+id="phone"
+placeholder="Enter your phone number"
+>
+
+<label>Password</label>
+<input
+type="password"
+id="password"
+placeholder="Create a password"
+>
+
+<button
+class="register-button"
+onclick="registerUser()"
+>
+Create Account
+</button>
+
+<div class="login-text">
+Already have an account?
+<a href="#" onclick="loginUser();return false;" style="color:#19d3ff;">
+Login
+</a>
+</div>
+
+<p id="accountMessage" style="margin-top:18px;"></p>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 DanielX-BTC. All rights reserved.</p>
+
+<p style="margin-top:8px;">
+Crypto trading involves risk. Trade responsibly.
+</p>
+
+</footer>
+
+
+<script>
+
+function openAccount(){
+
+document.getElementById("registerBox").style.display="block";
+
+document.getElementById("account").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function registerUser(){
+
+let name=document.getElementById("fullname").value;
+let email=document.getElementById("email").value;
+let phone=document.getElementById("phone").value;
+let password=document.getElementById("password").value;
+
+if(!name || !email || !phone || !password){
+
+document.getElementById("accountMessage").innerHTML=
+"Please complete all fields.";
+
+return;
+}
+
+document.getElementById("accountMessage").innerHTML=
+"Registration form completed. A secure account system must be connected before real accounts can be created.";
+
+}
+
+
+function loginUser(){
+
+alert("Login system will be connected in the next stage.");
+
+}
+
+
+function goToMarkets(){
+
+document.getElementById("markets").scrollIntoView({
+behavior:"smooth"
+});
+
+}
+
+
+function buyCrypto(){
+
+const asset=document.getElementById("asset").value;
+const amount=document.getElementById("amount").value;
+
+if(!amount){
+
+alert("Please enter an amount.");
+return;
+
+}
+
+document.getElementById("message").innerHTML=
+"BUY request prepared for "+amount+" of "+asset+".";
+
+}
+
+
+function sellCrypto(){
+
+const asset=document.getElementById("asset").value;
+const amount=document.getElementById("amount").value;
+
+if(!amount){
+
+alert("Please enter an amount.");
+return;
+
+}
+
+document.getElementById("message").innerHTML=
+"SELL request prepared for "+amount+" of "+asset+".";
+
+}
+
+</script>
 
 </body>
 </html>
+
+
+
