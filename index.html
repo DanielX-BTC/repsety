@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>DanielX-BTC | Crypto Market & News</title>
+<title>DanielX-BTC | Crypto Market</title>
 
 <style>
 *{
@@ -41,6 +41,10 @@ nav a{
   font-size:14px;
 }
 
+nav a:hover{
+  color:#21d4fd;
+}
+
 .hero{
   padding:55px 5%;
   text-align:center;
@@ -48,7 +52,7 @@ nav a{
 }
 
 .hero h1{
-  font-size:38px;
+  font-size:40px;
   margin-bottom:15px;
 }
 
@@ -122,6 +126,7 @@ button{
 }
 
 /* ADVERT */
+
 .advert{
   background:#0d2035;
   border:1px solid #1c3855;
@@ -147,6 +152,7 @@ button{
 }
 
 /* NEWS */
+
 .news-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -177,6 +183,8 @@ button{
   text-decoration:none;
 }
 
+/* TRADING */
+
 .trading{
   background:#0d2035;
   border:1px solid #1c3855;
@@ -202,6 +210,8 @@ button{
   margin-top:7px;
 }
 
+/* ACCOUNT */
+
 .account{
   text-align:center;
   padding:35px;
@@ -218,6 +228,7 @@ footer{
 }
 
 @media(max-width:600px){
+
   .hero h1{
     font-size:29px;
   }
@@ -236,6 +247,8 @@ footer{
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
 <div class="logo">⚡ DanielX-BTC</div>
@@ -250,6 +263,8 @@ footer{
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero">
 
 <h1>DanielX-BTC</h1>
@@ -258,14 +273,20 @@ footer{
 Crypto Market • Live Prices • Market Cap • Crypto News
 </p>
 
-<button class="primary"
+<button
+class="primary"
 onclick="document.getElementById('account').scrollIntoView()">
+
 Create Account
+
 </button>
 
-<button class="secondary"
+<button
+class="secondary"
 onclick="document.getElementById('market').scrollIntoView()">
+
 View Market
+
 </button>
 
 </section>
@@ -276,36 +297,73 @@ Loading live cryptocurrency market...
 </div>
 
 
-<!-- MARKET -->
+<!-- LIVE MARKET -->
 
 <section class="container" id="market">
 
-<h2 class="section-title">📊 Live Crypto Market</h2>
+<h2 class="section-title">
+📊 Live Crypto Market
+</h2>
 
 <div class="market-grid">
 
 <div class="coin">
+
 <h3>₿ Bitcoin</h3>
-<div class="price" id="btc">$--</div>
-<div class="cap" id="btcCap">Market Cap: --</div>
+
+<div class="price" id="btc">
+$--
 </div>
 
+<div class="cap" id="btcCap">
+Market Cap: --
+</div>
+
+</div>
+
+
 <div class="coin">
+
 <h3>✕ XRP</h3>
-<div class="price" id="xrp">$--</div>
-<div class="cap" id="xrpCap">Market Cap: --</div>
+
+<div class="price" id="xrp">
+$--
 </div>
 
+<div class="cap" id="xrpCap">
+Market Cap: --
+</div>
+
+</div>
+
+
 <div class="coin">
+
 <h3>◎ Solana</h3>
-<div class="price" id="sol">$--</div>
-<div class="cap" id="solCap">Market Cap: --</div>
+
+<div class="price" id="sol">
+$--
 </div>
 
+<div class="cap" id="solCap">
+Market Cap: --
+</div>
+
+</div>
+
+
 <div class="coin">
+
 <h3>Ξ Ethereum</h3>
-<div class="price" id="eth">$--</div>
-<div class="cap" id="ethCap">Market Cap: --</div>
+
+<div class="price" id="eth">
+$--
+</div>
+
+<div class="cap" id="ethCap">
+Market Cap: --
+</div>
+
 </div>
 
 </div>
@@ -319,11 +377,19 @@ Loading live cryptocurrency market...
 
 <div class="advert">
 
-<h2>📺 DanielX-BTC Advert</h2>
+<h2>
+📺 DanielX-BTC Advert
+</h2>
 
-<video controls autoplay muted playsinline>
+<video
+controls
+autoplay
+muted
+playsinline>
 
-<source src="advert.mp4" type="video/mp4">
+<source
+src="advert.mp4"
+type="video/mp4">
 
 Your browser does not support video playback.
 
@@ -335,9 +401,12 @@ Advertise your business, product or service on DanielX-BTC.
 
 <br>
 
-<button class="primary"
+<button
+class="primary"
 onclick="contactAdvert()">
+
 Advertise With Us
+
 </button>
 
 </div>
@@ -345,11 +414,13 @@ Advertise With Us
 </section>
 
 
-<!-- NEWS -->
+<!-- CRYPTO NEWS -->
 
 <section class="container" id="news">
 
-<h2 class="section-title">📰 Latest Crypto News</h2>
+<h2 class="section-title">
+📰 Crypto News
+</h2>
 
 <div class="news-grid">
 
@@ -358,12 +429,15 @@ Advertise With Us
 <h3>Bitcoin Market</h3>
 
 <p>
-Stay updated with Bitcoin market movements, price action and major developments.
+Follow Bitcoin market movements, price action and major cryptocurrency developments.
 </p>
 
-<a href="https://www.coindesk.com/"
+<a
+href="https://www.coindesk.com/"
 target="_blank">
-Read Crypto News →
+
+Read Bitcoin News →
+
 </a>
 
 </div>
@@ -377,9 +451,12 @@ Read Crypto News →
 Follow XRP developments, market activity and important XRP ecosystem updates.
 </p>
 
-<a href="https://cointelegraph.com/tags/xrp"
+<a
+href="https://cointelegraph.com/tags/xrp"
 target="_blank">
+
 Read XRP News →
+
 </a>
 
 </div>
@@ -387,15 +464,18 @@ Read XRP News →
 
 <div class="news-card">
 
-<h3>Altcoin Market</h3>
+<h3>Altcoin News</h3>
 
 <p>
-Discover developments across Solana, Ethereum and other major digital assets.
+Follow developments across Solana, Ethereum and other major digital assets.
 </p>
 
-<a href="https://coinmarketcap.com/headlines/news/"
+<a
+href="https://coinmarketcap.com/headlines/news/"
 target="_blank">
+
 Read Market News →
+
 </a>
 
 </div>
@@ -405,31 +485,45 @@ Read Market News →
 </section>
 
 
-<!-- TRADING -->
+<!-- TRADING PANEL -->
 
 <section class="container trading" id="trade">
 
-<h2 class="section-title">💱 Trading Panel</h2>
+<h2 class="section-title">
+💱 Trading Panel
+</h2>
 
 <p style="color:#9fb0c2;">
-Select a cryptocurrency and enter an amount to calculate an estimated quantity.
+
+Select a cryptocurrency and enter an amount.
+
 </p>
 
 <div class="trade-box">
 
 <div>
 
-<label>Cryptocurrency</label>
+<label>
+Cryptocurrency
+</label>
 
 <select id="coinSelect">
 
-<option value="btc">Bitcoin (BTC)</option>
+<option value="btc">
+Bitcoin (BTC)
+</option>
 
-<option value="xrp">XRP</option>
+<option value="xrp">
+XRP
+</option>
 
-<option value="sol">Solana (SOL)</option>
+<option value="sol">
+Solana (SOL)
+</option>
 
-<option value="eth">Ethereum (ETH)</option>
+<option value="eth">
+Ethereum (ETH)
+</option>
 
 </select>
 
@@ -438,7 +532,9 @@ Select a cryptocurrency and enter an amount to calculate an estimated quantity.
 
 <div>
 
-<label>Amount (USD)</label>
+<label>
+Amount (USD)
+</label>
 
 <input
 type="number"
@@ -451,15 +547,18 @@ placeholder="Enter amount">
 
 <br>
 
-<button class="primary"
+<button
+class="primary"
 onclick="calculateTrade()">
 
 Calculate Trade
 
 </button>
 
-<p id="tradeResult"
+<p
+id="tradeResult"
 style="margin-top:20px;color:#21d4fd;">
+
 </p>
 
 </section>
@@ -467,9 +566,13 @@ style="margin-top:20px;color:#21d4fd;">
 
 <!-- ACCOUNT -->
 
-<section class="container account" id="account">
+<section
+class="container account"
+id="account">
 
-<h2>🚀 Create Your DanielX-BTC Account</h2>
+<h2>
+🚀 Create Your DanielX-BTC Account
+</h2>
 
 <p style="margin:15px 0;color:#b8c7d9;">
 
@@ -477,26 +580,35 @@ Join DanielX-BTC and explore cryptocurrency markets.
 
 </p>
 
-<button class="primary"
+<button
+class="primary"
 onclick="showAccount()">
 
 Create Account
 
 </button>
 
-<p id="accountMessage"
+<p
+id="accountMessage"
 style="margin-top:20px;">
+
 </p>
 
 </section>
 
 
+<!-- FOOTER -->
+
 <footer>
 
-<p>© 2026 DanielX-BTC</p>
+<p>
+© 2026 DanielX-BTC
+</p>
 
 <p style="margin-top:8px;">
+
 Crypto information only — not financial advice.
+
 </p>
 
 </footer>
@@ -504,11 +616,13 @@ Crypto information only — not financial advice.
 
 <script>
 
-let prices={
+let prices = {
+
 btc:0,
 xrp:0,
 sol:0,
 eth:0
+
 };
 
 
@@ -516,31 +630,44 @@ async function loadMarket(){
 
 try{
 
-const url=
-"https://api.coingecko.com/api/v3/coins/markets"+
-"?vs_currency=usd"+
-"&ids=bitcoin,ripple,solana,ethereum"+
-"&order=market_cap_desc"+
-"&per_page=4"+
-"&page=1"+
+const url =
+
+"https://api.coingecko.com/api/v3/coins/markets" +
+
+"?vs_currency=usd" +
+
+"&ids=bitcoin,ripple,solana,ethereum" +
+
+"&order=market_cap_desc" +
+
+"&per_page=4" +
+
+"&page=1" +
+
 "&sparkline=false";
 
-const response=await fetch(url);
 
-const data=await response.json();
+const response =
+await fetch(url);
+
+const data =
+await response.json();
 
 
 data.forEach(coin=>{
 
+
 if(coin.id==="bitcoin"){
 
-prices.btc=coin.current_price;
+prices.btc =
+coin.current_price;
 
-document.getElementById("btc").innerText=
-"$"+coin.current_price.toLocaleString();
+document.getElementById("btc").innerText =
+"$" +
+coin.current_price.toLocaleString();
 
-document.getElementById("btcCap").innerText=
-"Market Cap: $"+
+document.getElementById("btcCap").innerText =
+"Market Cap: $" +
 coin.market_cap.toLocaleString();
 
 }
@@ -548,13 +675,15 @@ coin.market_cap.toLocaleString();
 
 if(coin.id==="ripple"){
 
-prices.xrp=coin.current_price;
+prices.xrp =
+coin.current_price;
 
-document.getElementById("xrp").innerText=
-"$"+coin.current_price.toLocaleString();
+document.getElementById("xrp").innerText =
+"$" +
+coin.current_price.toLocaleString();
 
-document.getElementById("xrpCap").innerText=
-"Market Cap: $"+
+document.getElementById("xrpCap").innerText =
+"Market Cap: $" +
 coin.market_cap.toLocaleString();
 
 }
@@ -562,13 +691,15 @@ coin.market_cap.toLocaleString();
 
 if(coin.id==="solana"){
 
-prices.sol=coin.current_price;
+prices.sol =
+coin.current_price;
 
-document.getElementById("sol").innerText=
-"$"+coin.current_price.toLocaleString();
+document.getElementById("sol").innerText =
+"$" +
+coin.current_price.toLocaleString();
 
-document.getElementById("solCap").innerText=
-"Market Cap: $"+
+document.getElementById("solCap").innerText =
+"Market Cap: $" +
 coin.market_cap.toLocaleString();
 
 }
@@ -576,13 +707,15 @@ coin.market_cap.toLocaleString();
 
 if(coin.id==="ethereum"){
 
-prices.eth=coin.current_price;
+prices.eth =
+coin.current_price;
 
-document.getElementById("eth").innerText=
-"$"+coin.current_price.toLocaleString();
+document.getElementById("eth").innerText =
+"$" +
+coin.current_price.toLocaleString();
 
-document.getElementById("ethCap").innerText=
-"Market Cap: $"+
+document.getElementById("ethCap").innerText =
+"Market Cap: $" +
 coin.market_cap.toLocaleString();
 
 }
@@ -590,14 +723,14 @@ coin.market_cap.toLocaleString();
 });
 
 
-document.getElementById("status").innerText=
+document.getElementById("status").innerText =
 "● Live market data connected";
 
 }
 
 catch(error){
 
-document.getElementById("status").innerText=
+document.getElementById("status").innerText =
 "Market data temporarily unavailable. Refresh the page.";
 
 }
@@ -607,37 +740,47 @@ document.getElementById("status").innerText=
 
 function calculateTrade(){
 
-const coin=
+const coin =
 document.getElementById("coinSelect").value;
 
-const amount=
-parseFloat(document.getElementById("amount").value);
+const amount =
+parseFloat(
+document.getElementById("amount").value
+);
+
 
 if(!amount || amount<=0){
 
-document.getElementById("tradeResult").innerText=
+document.getElementById("tradeResult").innerText =
 "Please enter a valid amount.";
 
 return;
 
 }
 
+
 if(!prices[coin]){
 
-document.getElementById("tradeResult").innerText=
+document.getElementById("tradeResult").innerText =
 "Price is still loading. Try again.";
 
 return;
 
 }
 
-const quantity=
-amount/prices[coin];
 
-document.getElementById("tradeResult").innerText=
-"Estimated quantity: "+
-quantity.toFixed(6)+
-" "+
+const quantity =
+amount / prices[coin];
+
+
+document.getElementById("tradeResult").innerText =
+
+"Estimated quantity: " +
+
+quantity.toFixed(6) +
+
+" " +
+
 coin.toUpperCase();
 
 }
@@ -645,7 +788,8 @@ coin.toUpperCase();
 
 function showAccount(){
 
-document.getElementById("accountMessage").innerText=
+document.getElementById("accountMessage").innerText =
+
 "Account registration is coming soon.";
 
 }
@@ -662,9 +806,12 @@ alert(
 
 loadMarket();
 
-setInterval(loadMarket,60000);
+setInterval(
+loadMarket,
+60000
+);
 
 </script>
 
 </body>
-  </html>
+</html>
