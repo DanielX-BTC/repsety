@@ -1,677 +1,690 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DanielX-BTC | Crypto Market & Education</title>
-  <meta name="description" content="DanielX-BTC provides cryptocurrency market prices, market capitalization, crypto education and digital asset information.">
+<title>DanielX-BTC | Crypto Market</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #07111f;
-      color: #ffffff;
-      line-height: 1.6;
-    }
+body{
+font-family:Arial,sans-serif;
+background:#07111f;
+color:white;
+line-height:1.6;
+}
 
-    header {
-      background: #0b1728;
-      border-bottom: 1px solid #1d3048;
-      padding: 16px 5%;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+header{
+background:#0b1728;
+border-bottom:1px solid #20344b;
+padding:16px 5%;
+position:sticky;
+top:0;
+z-index:10;
+}
 
-    .nav {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+.nav{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-      color: #39d9ff;
-    }
+.logo{
+font-size:24px;
+font-weight:bold;
+color:#39d9ff;
+}
 
-    .logo span {
-      color: #ffffff;
-    }
+.logo span{color:white}
 
-    nav a {
-      color: #d9e5f2;
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 14px;
-    }
+nav a{
+color:#dce8f3;
+text-decoration:none;
+margin-left:15px;
+font-size:14px;
+}
 
-    nav a:hover {
-      color: #39d9ff;
-    }
+nav a:hover{color:#39d9ff}
 
-    .hero {
-      max-width: 1200px;
-      margin: auto;
-      padding: 70px 5% 45px;
-      text-align: center;
-    }
+.hero{
+max-width:1100px;
+margin:auto;
+padding:70px 5%;
+text-align:center;
+}
 
-    .hero h1 {
-      font-size: clamp(38px, 7vw, 72px);
-      margin-bottom: 15px;
-    }
+.hero h1{
+font-size:clamp(40px,8vw,70px);
+}
 
-    .hero h1 span {
-      color: #39d9ff;
-    }
+.hero h1 span{color:#39d9ff}
 
-    .hero p {
-      max-width: 700px;
-      margin: auto;
-      color: #aebed0;
-      font-size: 18px;
-    }
+.hero p{
+color:#a9bacb;
+max-width:700px;
+margin:15px auto;
+font-size:18px;
+}
 
-    .buttons {
-      margin-top: 28px;
-    }
+.btn{
+display:inline-block;
+padding:13px 22px;
+border-radius:8px;
+text-decoration:none;
+font-weight:bold;
+margin:8px;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 8px;
-      text-decoration: none;
-      margin: 6px;
-      font-weight: bold;
-    }
+.primary{
+background:#39d9ff;
+color:#04101b;
+}
 
-    .primary {
-      background: #39d9ff;
-      color: #04101c;
-    }
+.secondary{
+border:1px solid #36516c;
+color:white;
+}
 
-    .secondary {
-      border: 1px solid #34506d;
-      color: white;
-    }
+section{
+max-width:1200px;
+margin:auto;
+padding:45px 5%;
+}
 
-    section {
-      max-width: 1200px;
-      margin: auto;
-      padding: 45px 5%;
-    }
+.title{
+font-size:30px;
+margin-bottom:25px;
+}
 
-    .section-title {
-      font-size: 30px;
-      margin-bottom: 25px;
-    }
+.market{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:18px;
+}
 
-    .market {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 18px;
-    }
+.card{
+background:#0d1c30;
+border:1px solid #1e354d;
+border-radius:14px;
+padding:22px;
+}
 
-    .coin {
-      background: #0d1c30;
-      border: 1px solid #1e344d;
-      border-radius: 14px;
-      padding: 22px;
-    }
+.coin{
+display:flex;
+justify-content:space-between;
+margin-bottom:12px;
+}
 
-    .coin-top {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 15px;
-    }
+.symbol{
+color:#8095aa;
+font-size:13px;
+}
 
-    .coin-name {
-      font-weight: bold;
-    }
+.price{
+font-size:25px;
+font-weight:bold;
+}
 
-    .symbol {
-      color: #8095aa;
-      font-size: 13px;
-    }
+.change{
+color:#55e69b;
+margin-top:5px;
+}
 
-    .price {
-      font-size: 25px;
-      font-weight: bold;
-      margin-bottom: 7px;
-    }
+.down{color:#ff6574}
 
-    .change {
-      color: #55e69b;
-      font-size: 14px;
-    }
+.info{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:20px;
+}
 
-    .negative {
-      color: #ff6d7a;
-    }
+.info h3{
+color:#39d9ff;
+margin-bottom:10px;
+}
 
-    .loading {
-      color: #93a7ba;
-    }
+.info p{
+color:#a9bacb;
+}
 
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
+.account{
+max-width:500px;
+margin:auto;
+background:#0d1c30;
+border:1px solid #1e354d;
+border-radius:14px;
+padding:30px;
+}
 
-    .info-card {
-      background: #0d1c30;
-      border: 1px solid #1e344d;
-      border-radius: 14px;
-      padding: 25px;
-    }
+.tabs{
+display:flex;
+gap:10px;
+margin-bottom:20px;
+}
 
-    .info-card h3 {
-      color: #39d9ff;
-      margin-bottom: 10px;
-    }
+.tabs button{
+flex:1;
+padding:12px;
+border:0;
+border-radius:7px;
+cursor:pointer;
+background:#15283e;
+color:white;
+}
 
-    .info-card p {
-      color: #aebed0;
-    }
+.tabs button.active{
+background:#39d9ff;
+color:#04101b;
+}
 
-    .account-box {
-      max-width: 500px;
-      margin: auto;
-      background: #0d1c30;
-      padding: 30px;
-      border-radius: 14px;
-      border: 1px solid #1e344d;
-    }
+input{
+width:100%;
+padding:14px;
+margin:7px 0;
+border-radius:7px;
+border:1px solid #2b465f;
+background:#07111f;
+color:white;
+}
 
-    input {
-      width: 100%;
-      padding: 14px;
-      margin: 8px 0;
-      border: 1px solid #2c4762;
-      background: #07111f;
-      color: white;
-      border-radius: 7px;
-    }
+.submit{
+width:100%;
+padding:14px;
+margin-top:10px;
+border:0;
+border-radius:7px;
+background:#39d9ff;
+font-weight:bold;
+cursor:pointer;
+}
 
-    button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 10px;
-      background: #39d9ff;
-      color: #04101c;
-      border: 0;
-      border-radius: 7px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+.message{
+text-align:center;
+margin-top:15px;
+color:#55e69b;
+}
 
-    #accountMessage {
-      margin-top: 15px;
-      color: #55e69b;
-      text-align: center;
-    }
+footer{
+margin-top:40px;
+padding:35px 5%;
+text-align:center;
+background:#050c16;
+color:#8194a8;
+}
 
-    .notice {
-      background: #101f33;
-      border-left: 4px solid #39d9ff;
-      padding: 20px;
-      color: #b7c7d7;
-      border-radius: 5px;
-    }
-
-    footer {
-      background: #050c16;
-      border-top: 1px solid #1d3048;
-      padding: 35px 5%;
-      text-align: center;
-      color: #8295a9;
-    }
-
-    footer a {
-      color: #aebed0;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
-    @media (max-width: 700px) {
-      nav a {
-        margin-left: 8px;
-        font-size: 12px;
-      }
-
-      .hero {
-        padding-top: 50px;
-      }
-    }
-  </style>
+@media(max-width:700px){
+nav a{font-size:11px;margin-left:6px}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">DanielX<span>-BTC</span></div>
+<div class="nav">
 
-    <nav>
-      <a href="#market">Market</a>
-      <a href="#learn">Learn</a>
-      <a href="#account">Account</a>
-      <a href="#about">About</a>
-    </nav>
-  </div>
+<div class="logo">
+DanielX<span>-BTC</span>
+</div>
+
+<nav>
+<a href="#market">Market</a>
+<a href="#learn">Learn</a>
+<a href="#account">Account</a>
+</nav>
+
+</div>
 </header>
 
-<main>
 
-  <section class="hero">
-    <h1>Welcome to <span>DanielX-BTC</span></h1>
+<section class="hero">
 
-    <p>
-      Explore cryptocurrency prices, market information and educational
-      resources in one simple place.
-    </p>
+<h1>
+Welcome to <span>DanielX-BTC</span>
+</h1>
 
-    <div class="buttons">
-      <a href="#market" class="btn primary">View Market</a>
-      <a href="#account" class="btn secondary">Create Account</a>
-    </div>
-  </section>
+<p>
+Crypto market information, digital asset education and live
+cryptocurrency prices in one place.
+</p>
 
+<a href="#market" class="btn primary">
+View Market
+</a>
 
-  <section id="market">
-    <h2 class="section-title">Live Crypto Market</h2>
+<a href="#account" class="btn secondary">
+Create Account
+</a>
 
-    <div class="market">
-
-      <div class="coin">
-        <div class="coin-top">
-          <div>
-            <div class="coin-name">Bitcoin</div>
-            <div class="symbol">BTC</div>
-          </div>
-          ₿
-        </div>
-
-        <div class="price loading" id="btcPrice">Loading...</div>
-        <div class="change" id="btcChange">Loading...</div>
-      </div>
+</section>
 
 
-      <div class="coin">
-        <div class="coin-top">
-          <div>
-            <div class="coin-name">XRP</div>
-            <div class="symbol">XRP</div>
-          </div>
-          ✕
-        </div>
+<section id="market">
 
-        <div class="price loading" id="xrpPrice">Loading...</div>
-        <div class="change" id="xrpChange">Loading...</div>
-      </div>
+<h2 class="title">
+Live Crypto Market
+</h2>
 
+<div class="market">
 
-      <div class="coin">
-        <div class="coin-top">
-          <div>
-            <div class="coin-name">Solana</div>
-            <div class="symbol">SOL</div>
-          </div>
-          ◎
-        </div>
-
-        <div class="price loading" id="solPrice">Loading...</div>
-        <div class="change" id="solChange">Loading...</div>
-      </div>
+<div class="card">
+<div class="coin">
+<strong>Bitcoin</strong>
+<span>BTC</span>
+</div>
+<div class="price" id="btc">$--</div>
+<div class="change" id="btcChange">Loading...</div>
+</div>
 
 
-      <div class="coin">
-        <div class="coin-top">
-          <div>
-            <div class="coin-name">Ethereum</div>
-            <div class="symbol">ETH</div>
-          </div>
-          Ξ
-        </div>
-
-        <div class="price loading" id="ethPrice">Loading...</div>
-        <div class="change" id="ethChange">Loading...</div>
-      </div>
-
-    </div>
-  </section>
+<div class="card">
+<div class="coin">
+<strong>XRP</strong>
+<span>XRP</span>
+</div>
+<div class="price" id="xrp">$--</div>
+<div class="change" id="xrpChange">Loading...</div>
+</div>
 
 
-  <section>
-    <h2 class="section-title">Market Information</h2>
-
-    <div class="info-grid">
-
-      <div class="info-card">
-        <h3>Bitcoin Market Cap</h3>
-        <p id="btcMarketCap">Loading...</p>
-      </div>
-
-      <div class="info-card">
-        <h3>Total Crypto Market Cap</h3>
-        <p id="totalMarketCap">Loading...</p>
-      </div>
-
-      <div class="info-card">
-        <h3>Market Status</h3>
-        <p id="marketStatus">Checking live data...</p>
-      </div>
-
-    </div>
-  </section>
+<div class="card">
+<div class="coin">
+<strong>Solana</strong>
+<span>SOL</span>
+</div>
+<div class="price" id="sol">$--</div>
+<div class="change" id="solChange">Loading...</div>
+</div>
 
 
-  <section id="learn">
-    <h2 class="section-title">Learn About Crypto</h2>
+<div class="card">
+<div class="coin">
+<strong>Ethereum</strong>
+<span>ETH</span>
+</div>
+<div class="price" id="eth">$--</div>
+<div class="change" id="ethChange">Loading...</div>
+</div>
 
-    <div class="info-grid">
+</div>
 
-      <div class="info-card">
-        <h3>What is Bitcoin?</h3>
-        <p>
-          Bitcoin is a decentralized digital asset that operates using
-          blockchain technology.
-        </p>
-      </div>
-
-      <div class="info-card">
-        <h3>What is XRP?</h3>
-        <p>
-          XRP is a digital asset associated with the XRP Ledger,
-          a blockchain designed for fast transactions.
-        </p>
-      </div>
-
-      <div class="info-card">
-        <h3>What is Market Cap?</h3>
-        <p>
-          Market capitalization is generally calculated by multiplying
-          an asset's price by its circulating supply.
-        </p>
-      </div>
-
-      <div class="info-card">
-        <h3>Crypto Risk</h3>
-        <p>
-          Cryptocurrency prices can move significantly. Never invest money
-          you cannot afford to lose.
-        </p>
-      </div>
-
-    </div>
-  </section>
+</section>
 
 
-  <section id="account">
-    <h2 class="section-title">Create Account</h2>
+<section>
 
-    <div class="account-box">
+<h2 class="title">
+Market Information
+</h2>
 
-      <p style="color:#aebed0; margin-bottom:15px;">
-        Create a demo account to explore the DanielX-BTC interface.
-      </p>
+<div class="info">
 
-      <input
-        type="text"
-        id="name"
-        placeholder="Full name"
-      >
+<div class="card">
+<h3>Bitcoin Market Cap</h3>
+<p id="btcCap">Loading...</p>
+</div>
 
-      <input
-        type="email"
-        id="email"
-        placeholder="Email address"
-      >
+<div class="card">
+<h3>Market Status</h3>
+<p id="status">Connecting to market...</p>
+</div>
 
-      <input
-        type="password"
-        id="password"
-        placeholder="Password"
-      >
+<div class="card">
+<h3>Data</h3>
+<p>
+Prices are retrieved from a public cryptocurrency
+market-data service.
+</p>
+</div>
 
-      <button onclick="createAccount()">
-        Create Account
-      </button>
+</div>
 
-      <div id="accountMessage"></div>
-
-    </div>
-  </section>
+</section>
 
 
-  <section id="about">
-    <h2 class="section-title">About DanielX-BTC</h2>
+<section id="learn">
 
-    <div class="notice">
-      DanielX-BTC is a cryptocurrency information platform designed to
-      provide market information and educational resources for people
-      interested in digital assets.
-      <br><br>
-      DanielX-BTC does not currently provide custody of cryptocurrency,
-      investment guarantees or financial advice.
-    </div>
-  </section>
+<h2 class="title">
+Learn About Crypto
+</h2>
+
+<div class="info">
+
+<div class="card">
+<h3>Bitcoin</h3>
+<p>
+Bitcoin is a decentralized digital asset operating
+on blockchain technology.
+</p>
+</div>
+
+<div class="card">
+<h3>XRP</h3>
+<p>
+XRP is a digital asset used on the XRP Ledger,
+which is designed for fast transactions.
+</p>
+</div>
+
+<div class="card">
+<h3>Market Cap</h3>
+<p>
+Market capitalization generally represents an asset's
+price multiplied by its circulating supply.
+</p>
+</div>
+
+<div class="card">
+<h3>Risk</h3>
+<p>
+Cryptocurrency prices can be highly volatile.
+Never invest money you cannot afford to lose.
+</p>
+</div>
+
+</div>
+
+</section>
 
 
-  <section>
-    <h2 class="section-title">Important Information</h2>
+<section id="account">
 
-    <div class="notice">
-      Cryptocurrency markets are highly volatile. Information displayed on
-      this website is for educational and informational purposes only and
-      should not be considered financial advice.
-    </div>
-  </section>
+<h2 class="title">
+Account
+</h2>
 
-</main>
+<div class="account">
+
+<div class="tabs">
+
+<button id="signupTab"
+class="active"
+onclick="showSignup()">
+Create Account
+</button>
+
+<button id="loginTab"
+onclick="showLogin()">
+Login
+</button>
+
+</div>
+
+
+<div id="signup">
+
+<input
+id="name"
+type="text"
+placeholder="Full name"
+>
+
+<input
+id="email"
+type="email"
+placeholder="Email address"
+>
+
+<input
+id="password"
+type="password"
+placeholder="Password"
+>
+
+<button class="submit" onclick="signup()">
+Create Account
+</button>
+
+</div>
+
+
+<div id="login" style="display:none">
+
+<input
+id="loginEmail"
+type="email"
+placeholder="Email address"
+>
+
+<input
+id="loginPassword"
+type="password"
+placeholder="Password"
+>
+
+<button class="submit" onclick="login()">
+Login
+</button>
+
+</div>
+
+
+<div id="message" class="message"></div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<h2 class="title">
+About DanielX-BTC
+</h2>
+
+<div class="card">
+
+<p style="color:#a9bacb">
+
+DanielX-BTC is a cryptocurrency information and
+education platform. The website provides market
+information and educational material about digital assets.
+
+<br><br>
+
+Information provided on this website is for educational
+purposes and is not financial advice.
+
+</p>
+
+</div>
+
+</section>
 
 
 <footer>
 
-  <p>© 2026 DanielX-BTC. All rights reserved.</p>
+<p>
+© 2026 DanielX-BTC. All rights reserved.
+</p>
 
-  <p style="margin-top:12px;">
-    <a href="#about">About</a>
-    <a href="#learn">Education</a>
-    <a href="#account">Account</a>
-  </p>
+<p style="margin-top:10px">
+Crypto information • Education • Market Data
+</p>
 
 </footer>
 
 
 <script>
 
-  const API =
-    "https://api.coingecko.com/api/v3/simple/price" +
-    "?ids=bitcoin,ripple,solana,ethereum" +
-    "&vs_currencies=usd" +
-    "&include_24hr_change=true" +
-    "&include_market_cap=true";
+const API =
+"https://api.coingecko.com/api/v3/simple/price"+
+"?ids=bitcoin,ripple,solana,ethereum"+
+"&vs_currencies=usd"+
+"&include_24hr_change=true"+
+"&include_market_cap=true";
 
 
-  function money(number) {
+function money(value){
 
-    if (number >= 1000) {
-      return "$" + Number(number).toLocaleString(
-        undefined,
-        {
-          maximumFractionDigits: 2
-        }
-      );
-    }
+return "$"+Number(value).toLocaleString(
+undefined,
+{
+maximumFractionDigits:6
+}
+);
 
-    return "$" + Number(number).toLocaleString(
-      undefined,
-      {
-        maximumFractionDigits: 6
-      }
-    );
-  }
+}
 
 
-  function percent(number) {
+function change(value){
 
-    if (number === null || number === undefined) {
-      return "N/A";
-    }
+let n=Number(value).toFixed(2);
 
-    const value = Number(number).toFixed(2);
+return (n>=0?"+":"")+n+"% (24h)";
 
-    return (number >= 0 ? "+" : "") + value + "% (24h)";
-  }
+}
 
 
-  function setChange(id, value) {
+async function loadMarket(){
 
-    const element = document.getElementById(id);
+try{
 
-    element.textContent = percent(value);
+const response=await fetch(API);
 
-    element.classList.remove("negative");
+const data=await response.json();
 
-    if (Number(value) < 0) {
-      element.classList.add("negative");
-    }
-  }
 
+document.getElementById("btc").textContent=
+money(data.bitcoin.usd);
 
-  async function loadMarket() {
+document.getElementById("xrp").textContent=
+money(data.ripple.usd);
 
-    try {
+document.getElementById("sol").textContent=
+money(data.solana.usd);
 
-      const response = await fetch(API);
+document.getElementById("eth").textContent=
+money(data.ethereum.usd);
 
-      if (!response.ok) {
-        throw new Error("Market request failed");
-      }
 
-      const data = await response.json();
+document.getElementById("btcChange").textContent=
+change(data.bitcoin.usd_24h_change);
 
+document.getElementById("xrpChange").textContent=
+change(data.ripple.usd_24h_change);
 
-      document.getElementById("btcPrice").textContent =
-        money(data.bitcoin.usd);
+document.getElementById("solChange").textContent=
+change(data.solana.usd_24h_change);
 
-      document.getElementById("xrpPrice").textContent =
-        money(data.ripple.usd);
+document.getElementById("ethChange").textContent=
+change(data.ethereum.usd_24h_change);
 
-      document.getElementById("solPrice").textContent =
-        money(data.solana.usd);
 
-      document.getElementById("ethPrice").textContent =
-        money(data.ethereum.usd);
+document.getElementById("btcCap").textContent=
+money(data.bitcoin.usd_market_cap);
 
+document.getElementById("status").textContent=
+"Live market data connected";
 
-      setChange(
-        "btcChange",
-        data.bitcoin.usd_24h_change
-      );
 
-      setChange(
-        "xrpChange",
-        data.ripple.usd_24h_change
-      );
+}
 
-      setChange(
-        "solChange",
-        data.solana.usd_24h_change
-      );
+catch(error){
 
-      setChange(
-        "ethChange",
-        data.ethereum.usd_24h_change
-      );
+document.getElementById("status").textContent=
+"Market data temporarily unavailable.";
 
+}
 
-      document.getElementById("btcMarketCap").textContent =
-        money(data.bitcoin.usd_market_cap);
+}
 
 
-      document.getElementById("marketStatus").textContent =
-        "Live market data connected";
+function showSignup(){
 
+document.getElementById("signup").style.display="block";
 
-    } catch (error) {
+document.getElementById("login").style.display="none";
 
-      document.getElementById("marketStatus").textContent =
-        "Market data temporarily unavailable.";
+document.getElementById("signupTab").classList.add("active");
 
-      document.getElementById("btcPrice").textContent = "Unavailable";
-      document.getElementById("xrpPrice").textContent = "Unavailable";
-      document.getElementById("solPrice").textContent = "Unavailable";
-      document.getElementById("ethPrice").textContent = "Unavailable";
+document.getElementById("loginTab").classList.remove("active");
 
-    }
+}
 
-  }
 
+function showLogin(){
 
-  function createAccount() {
+document.getElementById("signup").style.display="none";
 
-    const name =
-      document.getElementById("name").value.trim();
+document.getElementById("login").style.display="block";
 
-    const email =
-      document.getElementById("email").value.trim();
+document.getElementById("signupTab").classList.remove("active");
 
-    const password =
-      document.getElementById("password").value;
+document.getElementById("loginTab").classList.add("active");
 
-    const message =
-      document.getElementById("accountMessage");
+}
 
 
-    if (!name || !email || !password) {
+function signup(){
 
-      message.style.color = "#ff6d7a";
+const name=document.getElementById("name").value;
 
-      message.textContent =
-        "Please complete all fields.";
+const email=document.getElementById("email").value;
 
-      return;
-    }
+const password=document.getElementById("password").value;
 
+const message=document.getElementById("message");
 
-    if (password.length < 6) {
 
-      message.style.color = "#ff6d7a";
+if(!name || !email || !password){
 
-      message.textContent =
-        "Password must contain at least 6 characters.";
+message.textContent="Please complete all fields.";
 
-      return;
-    }
+return;
 
+}
 
-    message.style.color = "#55e69b";
 
-    message.textContent =
-      "Demo account created successfully.";
+if(password.length<6){
 
-  }
+message.textContent=
+"Password must contain at least 6 characters.";
 
+return;
 
-  loadMarket();
+}
 
-  setInterval(loadMarket, 60000);
+
+message.textContent=
+"Account interface ready. Secure authentication will be connected next.";
+
+}
+
+
+function login(){
+
+const email=document.getElementById("loginEmail").value;
+
+const password=document.getElementById("loginPassword").value;
+
+const message=document.getElementById("message");
+
+
+if(!email || !password){
+
+message.textContent="Please enter your email and password.";
+
+return;
+
+}
+
+
+message.textContent=
+"Login system will be connected to secure authentication next.";
+
+}
+
+
+loadMarket();
+
+setInterval(loadMarket,60000);
 
 </script>
 
 </body>
-  </html>
+</html>
