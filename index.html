@@ -3,432 +3,336 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DanielX-BTC</title>
-
+<meta name="description" content="DanielX-BTC crypto market, news, trading tools and advertising portal.">
+<title>DanielX-BTC | Crypto Market</title>
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+:root{
+  --bg:#020617;--panel:#071126;--panel2:#0b1730;--line:#1d355c;
+  --text:#f8fafc;--muted:#91a4c3;--blue:#00b7ff;--green:#20d47b;
+  --red:#ff5c70;--gold:#ffd34d;
 }
-
-body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#020817;
-  color:white;
-}
-
-header{
-  padding:22px 20px 0;
-  border-bottom:1px solid #18324f;
-  background:#020817;
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-
-.logo{
-  text-align:center;
-  font-size:32px;
-  font-weight:800;
-  color:#16cfff;
-  margin-bottom:20px;
-}
-
-.logo span{
-  color:white;
-}
-
-nav{
-  display:flex;
-  justify-content:space-around;
-  overflow-x:auto;
-  padding-bottom:16px;
-}
-
-nav a{
-  color:#e9f4ff;
-  text-decoration:none;
-  font-size:15px;
-  padding:8px 10px;
-  white-space:nowrap;
-}
-
-nav a:hover,
-nav a.active{
-  color:#18d5ff;
-  border-bottom:3px solid #18d5ff;
-}
-
-.container{
-  width:94%;
-  max-width:1000px;
-  margin:22px auto;
-}
-
-.card{
-  background:linear-gradient(145deg,#06152c,#020b1d);
-  border:1px solid #1c4167;
-  border-radius:24px;
-  padding:24px;
-  margin-bottom:26px;
-  box-shadow:0 0 25px rgba(0,180,255,.08);
-}
-
-.hero{
-  text-align:center;
-  padding:35px 20px;
-}
-
-.hero h1{
-  font-size:40px;
-  margin-bottom:12px;
-}
-
-.hero h1 span{
-  color:#11d7ff;
-}
-
-.hero p{
-  color:#a9c2d9;
-  line-height:1.6;
-  margin-bottom:25px;
-}
-
-button{
-  border:0;
-  border-radius:14px;
-  padding:15px 25px;
-  background:#08bdf2;
-  color:white;
-  font-weight:bold;
-  font-size:16px;
-  cursor:pointer;
-}
-
-button:hover{
-  background:#00e0ff;
-}
-
-.section-title{
-  font-size:28px;
-  margin-bottom:10px;
-}
-
-.subtitle{
-  color:#9bb0c7;
-  margin-bottom:20px;
-}
-
-.ad-box{
-  text-align:center;
-}
-
-.ad-video{
-  width:100%;
-  min-height:220px;
-  border-radius:18px;
-  background:#000;
-  border:1px solid #15517b;
-  margin:20px 0;
-}
-
-.ad-note{
-  color:#9bb0c7;
-  margin:15px 0 22px;
-}
-
-.crypto-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-.coin{
-  background:#071a31;
-  border:1px solid #173e60;
-  border-radius:16px;
-  padding:18px;
-}
-
-.coin-name{
-  font-weight:bold;
-  font-size:18px;
-}
-
-.price{
-  color:#15d5ff;
-  font-size:20px;
-  margin-top:8px;
-}
-
-.news{
-  display:grid;
-  gap:14px;
-}
-
-.news-item{
-  background:#071a31;
-  border:1px solid #173e60;
-  border-radius:16px;
-  padding:18px;
-}
-
-.news-item h3{
-  margin-bottom:8px;
-}
-
-.news-item p{
-  color:#9db2c8;
-  line-height:1.5;
-}
-
-.account{
-  text-align:center;
-}
-
-input{
-  width:100%;
-  padding:14px;
-  margin:8px 0;
-  border-radius:10px;
-  border:1px solid #244866;
-  background:#061326;
-  color:white;
-}
-
-footer{
-  text-align:center;
-  color:#71869c;
-  padding:30px 15px;
-  border-top:1px solid #18324f;
-  margin-top:30px;
-}
-
-@media(max-width:600px){
-  .logo{
-    font-size:27px;
-  }
-
-  .hero h1{
-    font-size:32px;
-  }
-
-  .section-title{
-    font-size:25px;
-  }
-
-  .card{
-    padding:18px;
-  }
-}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 50% -10%,#102a54 0,#020617 42%);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+button,input{font:inherit}
+button{cursor:pointer}
+header{position:sticky;top:0;z-index:20;background:rgba(2,6,23,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top{max-width:1180px;margin:auto;padding:14px 18px 8px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font-size:28px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--blue)}
+.logo b{color:var(--gold)}
+.status{font-size:12px;color:#9fb3d3}.dot{display:inline-block;width:8px;height:8px;background:var(--green);border-radius:50%;margin-right:5px}
+nav{max-width:1180px;margin:auto;display:flex;gap:4px;overflow:auto;padding:4px 12px 0}
+nav a{color:#d7e3f5;text-decoration:none;padding:13px 15px;border-bottom:3px solid transparent;white-space:nowrap}
+nav a:hover,nav a.active{color:var(--blue);border-color:var(--blue)}
+main{max-width:1180px;margin:auto;padding:20px 16px 70px}
+.hero{padding:22px 0 8px}.hero h1{font-size:clamp(30px,6vw,54px);margin:0 0 8px}.hero p{color:var(--muted);font-size:17px;max-width:700px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:800;background:var(--blue);color:#00101b}
+.btn.alt{background:#112344;color:#dceaff;border:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.card{background:linear-gradient(145deg,rgba(11,23,48,.95),rgba(4,12,29,.95));border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 10px 35px rgba(0,0,0,.16)}
+.stat small,.muted{color:var(--muted)}.stat strong{display:block;font-size:23px;margin-top:7px}
+.section{margin-top:28px}.section h2{margin:0 0 13px;font-size:27px}
+.search{width:100%;background:#050e21;border:1px solid var(--line);color:white;padding:13px 15px;border-radius:12px;margin-bottom:12px}
+.tablewrap{overflow-x:auto}.table{width:100%;border-collapse:collapse;min-width:650px}
+.table th,.table td{padding:14px 10px;text-align:left;border-bottom:1px solid #152746}.table th{color:#8fa5c5;font-size:13px}
+.coin{font-weight:800}.symbol{color:#8297b8;font-size:12px;margin-left:5px}
+.up{color:var(--green)}.down{color:var(--red)}
+.pill{padding:5px 8px;border-radius:8px;font-size:12px;font-weight:800}
+.pill.up{background:rgba(32,212,123,.1)}.pill.down{background:rgba(255,92,112,.1)}
+.marketgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
+.adbox{min-height:260px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.adbox img,.adbox video{max-width:100%;max-height:360px;border-radius:14px;display:none}
+.ad-placeholder{padding:35px}.ad-placeholder h3{font-size:24px;margin:0 0 8px}.ad-placeholder p{color:var(--muted)}
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.news article{padding:18px}.news h3{margin:7px 0}.news a{color:#b8dfff;text-decoration:none}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.calc input,.trade input,.contact input,.contact textarea{width:100%;margin:7px 0;padding:12px;border-radius:10px;border:1px solid var(--line);background:#040c1e;color:white}
+.result{font-size:21px;font-weight:900;margin:10px 0;color:var(--blue)}
+.tradegrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.trade h3{margin-top:0}
+.buy{background:rgba(32,212,123,.12);border:1px solid #1e8b5b}.sell{background:rgba(255,92,112,.1);border:1px solid #9d3d4c}
+footer{border-top:1px solid var(--line);padding:28px 16px;color:#7f92b0;text-align:center}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+.modalbox{max-width:460px;width:100%;background:#071126;border:1px solid var(--line);border-radius:18px;padding:22px}
+.close{float:right;background:none;border:0;color:white;font-size:25px}
+.notice{font-size:12px;color:#8396b4;line-height:1.5}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.marketgrid,.tradegrid{grid-template-columns:1fr}.news,.tools{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.top{align-items:flex-start}.status{display:none}.logo{font-size:23px}.grid,.news,.tools{grid-template-columns:1fr}.card{border-radius:16px}main{padding-left:12px;padding-right:12px}}
 </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo">⚡ Daniel<span>X-BTC</span></div>
-
+  <div class="top">
+    <div class="logo"><b>⚡</b> DanielX<span>-BTC</span></div>
+    <div class="status"><span class="dot"></span>Market demo online</div>
+  </div>
   <nav>
-    <a href="#market" class="active">Market</a>
+    <a class="active" href="#market">Market</a>
     <a href="#advert">Advert</a>
     <a href="#news">News</a>
     <a href="#trade">Trade</a>
     <a href="#account">Account</a>
+    <a href="#tools">Tools</a>
   </nav>
 </header>
 
-<main class="container">
+<main>
+<section class="hero">
+  <h1>Crypto market, <span style="color:var(--blue)">DanielX-BTC</span></h1>
+  <p>Track crypto prices, explore market data, read updates, calculate conversions and showcase advertising — all from one mobile-friendly dashboard.</p>
+  <div class="actions">
+    <a class="btn" href="#market">View Market</a>
+    <button class="btn alt" onclick="openAccount()">Create Account</button>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="card hero" id="market">
-    <h1>Trade Smarter<br><span>Grow Faster</span></h1>
+<section class="grid">
+  <div class="card stat"><small>Bitcoin</small><strong id="btcStat">Loading…</strong></div>
+  <div class="card stat"><small>Ethereum</small><strong id="ethStat">Loading…</strong></div>
+  <div class="card stat"><small>XRP</small><strong id="xrpStat">Loading…</strong></div>
+  <div class="card stat"><small>Solana</small><strong id="solStat">Loading…</strong></div>
+</section>
 
-    <p>
-      Buy, sell and follow top cryptocurrencies
-      with real-time market information.
-    </p>
+<section id="market" class="section">
+  <h2>📊 Live Crypto Market</h2>
+  <input id="search" class="search" placeholder="Search BTC, XRP, Solana..." oninput="filterCoins()">
+  <div class="card tablewrap">
+    <table class="table">
+      <thead><tr><th>Asset</th><th>Price USD</th><th>24h</th><th>Market Cap</th><th>Watch</th></tr></thead>
+      <tbody id="marketBody"><tr><td colspan="5">Loading market data…</td></tr></tbody>
+    </table>
+    <p class="notice">Prices are fetched from a public market-data API when available. If the API is unavailable, the page keeps working with the rest of the dashboard.</p>
+  </div>
+</section>
 
-    <button onclick="document.getElementById('trade').scrollIntoView()">
-      Start Trading →
-    </button>
-  </section>
-
-  <!-- MARKET -->
-  <section class="card">
-    <h2 class="section-title">📈 Crypto Market</h2>
-    <p class="subtitle">Live market prices</p>
-
-    <div class="crypto-grid">
-
-      <div class="coin">
-        <div class="coin-name">₿ Bitcoin</div>
-        <div class="price" id="btc">$--</div>
+<section class="section marketgrid">
+  <div id="advert" class="card">
+    <h2>📺 Advertising</h2>
+    <p class="muted">Promote your business and products to DanielX-BTC visitors.</p>
+    <div class="card adbox">
+      <div class="ad-placeholder" id="adPlaceholder">
+        <h3>📺 DanielX-BTC Advert</h3>
+        <p>Your advert image or video can appear here.</p>
+        <button class="btn" onclick="showAd()">▶ Play Advert</button>
       </div>
-
-      <div class="coin">
-        <div class="coin-name">Ξ Ethereum</div>
-        <div class="price" id="eth">$--</div>
-      </div>
-
-      <div class="coin">
-        <div class="coin-name">XRP</div>
-        <div class="price" id="xrp">$--</div>
-      </div>
-
-      <div class="coin">
-        <div class="coin-name">◎ Solana</div>
-        <div class="price" id="sol">$--</div>
-      </div>
-
+      <img id="adImage" src="advert.jpg" alt="DanielX-BTC advert">
+      <video id="adVideo" controls playsinline poster="advert.jpg"><source src="advert.mp4" type="video/mp4"></video>
     </div>
-  </section>
+    <button class="btn" onclick="openAdvert()">📣 Advertise With Us</button>
+  </div>
 
-  <!-- ADVERT -->
-  <section class="card ad-box" id="advert">
+  <div class="card">
+    <h2>🔥 Trending</h2>
+    <div id="trendList" class="muted">Loading…</div>
+  </div>
+</section>
 
-    <h2 class="section-title">📺 Advertising</h2>
+<section id="news" class="section">
+  <h2>📰 Crypto News</h2>
+  <div class="news">
+    <article class="card"><div>₿ BITCOIN</div><h3>Bitcoin Market</h3><p class="muted">Follow Bitcoin price movements and major market developments.</p><a href="https://www.coindesk.com/markets/" target="_blank" rel="noopener">Read market news →</a></article>
+    <article class="card"><div>💧 XRP</div><h3>XRP Updates</h3><p class="muted">Track XRP-related market developments and price movements.</p><a href="https://www.coindesk.com/markets/" target="_blank" rel="noopener">Read updates →</a></article>
+    <article class="card"><div>◎ SOLANA</div><h3>Solana & Altcoins</h3><p class="muted">Explore broader altcoin market activity and trends.</p><a href="https://www.coindesk.com/markets/" target="_blank" rel="noopener">Explore news →</a></article>
+  </div>
+</section>
 
-    <p class="subtitle">
-      Promote your business and products to visitors.
-    </p>
+<section id="trade" class="section">
+  <h2>💱 Trading Panel</h2>
+  <div class="tradegrid">
+    <div class="card trade buy">
+      <h3>Buy Crypto</h3>
+      <label>Asset</label><input id="buyCoin" value="BTC">
+      <label>Amount (USD)</label><input id="buyAmount" type="number" value="100">
+      <button class="btn" onclick="demoTrade('BUY')">Buy Preview</button>
+    </div>
+    <div class="card trade sell">
+      <h3>Sell Crypto</h3>
+      <label>Asset</label><input id="sellCoin" value="XRP">
+      <label>Amount (USD)</label><input id="sellAmount" type="number" value="100">
+      <button class="btn" onclick="demoTrade('SELL')">Sell Preview</button>
+    </div>
+  </div>
+  <p class="notice">Trading buttons on this version are demonstration previews only. They do not move real money or execute real orders.</p>
+</section>
 
+<section id="tools" class="section">
+  <h2>🧰 Crypto Tools</h2>
+  <div class="tools">
+    <div class="card calc">
+      <h3>🧮 Calculator</h3>
+      <input id="calcPrice" type="number" placeholder="Coin price USD">
+      <input id="calcAmount" type="number" placeholder="USD amount">
+      <button class="btn" onclick="calculate()">Calculate</button>
+      <div class="result" id="calcResult">—</div>
+    </div>
     <div class="card">
-
-      <h2>📺 DanielX-BTC Advert</h2>
-
-    index.html
-advert.mp4
-advert.jpg
-
-      <p class="ad-note">
-        Your advertisement can appear here.
-      </p>
-
-      <button onclick="advertise()">
-        📢 Advertise With Us
-      </button>
-
+      <h3>⭐ Watchlist</h3>
+      <p class="muted">Tap ★ beside an asset to save it on this device.</p>
+      <div id="watchList">No coins saved yet.</div>
     </div>
-  </section>
-
-  <!-- NEWS -->
-  <section class="card" id="news">
-
-    <h2 class="section-title">📰 Crypto News</h2>
-
-    <p class="subtitle">
-      Stay updated with crypto market trends.
-    </p>
-
-    <div class="news">
-
-      <div class="news-item">
-        <h3>Bitcoin Market</h3>
-        <p>
-          Follow Bitcoin price movements and major market developments.
-        </p>
-      </div>
-
-      <div class="news-item">
-        <h3>XRP Updates</h3>
-        <p>
-          Watch XRP market activity and important developments.
-        </p>
-      </div>
-
-      <div class="news-item">
-        <h3>Crypto Market</h3>
-        <p>
-          Keep checking DanielX-BTC for cryptocurrency updates.
-        </p>
-      </div>
-
+    <div class="card">
+      <h3>🔔 Price Alerts</h3>
+      <p class="muted">Set your target manually and check the market when you return.</p>
+      <button class="btn" onclick="alert('Price-alert settings can be connected to a notification service later.')">Set Alert</button>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- TRADE -->
-  <section class="card" id="trade">
+<section id="account" class="section">
+  <h2>👤 Account</h2>
+  <div class="card">
+    <h3>DanielX-BTC Account</h3>
+    <p class="muted">Create an account to prepare your user area.</p>
+    <button class="btn" onclick="openAccount()">Create Account</button>
+    <button class="btn alt" onclick="openAccount()">Login</button>
+    <p class="notice">This front-end demo does not store passwords or create real financial accounts. A secure backend is required for real authentication and wallets.</p>
+  </div>
+</section>
 
-    <h2 class="section-title">💱 Trade</h2>
+<section class="section">
+  <h2>📞 Contact & Support</h2>
+  <div class="card contact">
+    <input id="contactName" placeholder="Your name">
+    <input id="contactEmail" type="email" placeholder="Your email">
+    <textarea id="contactMsg" rows="4" placeholder="How can we help?"></textarea>
+    <button class="btn" onclick="sendContact()">Send Message</button>
+  </div>
+</section>
 
-    <p class="subtitle">
-      Trading panel
-    </p>
-
-    <input type="text" placeholder="Coin e.g. BTC">
-
-    <input type="number" placeholder="Amount">
-
-    <button onclick="startTrade()">
-      Trade Now
-    </button>
-
-    <p id="tradeMessage" style="margin-top:15px;color:#18d5ff;"></p>
-
-  </section>
-
-  <!-- ACCOUNT -->
-  <section class="card account" id="account">
-
-    <h2 class="section-title">👤 Account</h2>
-
-    <p class="subtitle">
-      Create your DanielX-BTC account
-    </p>
-
-    <input type="text" placeholder="Full name">
-
-    <input type="email" placeholder="Email address">
-
-    <input type="password" placeholder="Password">
-
-    <button onclick="createAccount()">
-      Create Account
-    </button>
-
-    <p id="accountMessage" style="margin-top:15px;color:#18d5ff;"></p>
-
-  </section>
-
+<section class="section card">
+  <h2>⚠️ Risk Notice</h2>
+  <p class="notice">Cryptocurrency prices can move rapidly and you can lose money. DanielX-BTC should not present demo prices, balances or trades as guaranteed profits. Verify information independently before making financial decisions.</p>
+</section>
 </main>
 
 <footer>
-  © 2026 DanielX-BTC — Crypto Market Platform
+  <strong>⚡ DanielX-BTC</strong><br><br>
+  Crypto market • News • Tools • Advertising<br>
+  <span>© 2026 DanielX-BTC</span>
 </footer>
 
+<div id="modal" class="modal">
+  <div class="modalbox">
+    <button class="close" onclick="closeModal()">×</button>
+    <h2 id="modalTitle">Create Account</h2>
+    <p class="muted">This is the front-end account screen.</p>
+    <input id="modalName" class="search" placeholder="Full name">
+    <input id="modalEmail" class="search" placeholder="Email address">
+    <button class="btn" onclick="demoAccount()">Continue</button>
+    <p class="notice">Real account creation requires a secure server, database, password hashing, email verification and appropriate compliance controls.</p>
+  </div>
+</div>
+
 <script>
-
-function advertise(){
-  alert("Advertising contact coming soon.");
-}
-
-function startTrade(){
-  document.getElementById("tradeMessage").innerText =
-  "Trading panel is ready. Connect your exchange system before accepting real trades.";
-}
-
-function createAccount(){
-  document.getElementById("accountMessage").innerText =
-  "Account registration interface is ready.";
-}
-
-/* Demo market prices.
-   These are NOT real-time trading prices yet. */
-const prices = {
-  btc: "Loading...",
-  eth: "Loading...",
-  xrp: "Loading...",
-  sol: "Loading..."
+const ids = ['bitcoin','ethereum','ripple','solana','binancecoin','tron','cardano','dogecoin'];
+const names = {
+ bitcoin:['Bitcoin','BTC'], ethereum:['Ethereum','ETH'], ripple:['XRP','XRP'],
+ solana:['Solana','SOL'], binancecoin:['BNB','BNB'], tron:['TRON','TRX'],
+ cardano:['Cardano','ADA'], dogecoin:['Dogecoin','DOGE']
 };
+let coins = [];
+let watch = JSON.parse(localStorage.getItem('dx_watch') || '[]');
 
-document.getElementById("btc").innerText = prices.btc;
-document.getElementById("eth").innerText = prices.eth;
-document.getElementById("xrp").innerText = prices.xrp;
-document.getElementById("sol").innerText = prices.sol;
-
+function money(n){
+  if(n===null || n===undefined || Number.isNaN(Number(n))) return '—';
+  return '$' + Number(n).toLocaleString(undefined,{maximumFractionDigits:8});
+}
+function compact(n){
+  if(!n) return '—';
+  if(n>=1e12) return '$'+(n/1e12).toFixed(2)+'T';
+  if(n>=1e9) return '$'+(n/1e9).toFixed(2)+'B';
+  if(n>=1e6) return '$'+(n/1e6).toFixed(2)+'M';
+  return money(n);
+}
+async function loadMarket(){
+  try{
+    const url='https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids='+ids.join(',')+'&order=market_cap_desc&per_page=20&page=1&sparkline=false&price_change_percentage=24h';
+    const r=await fetch(url);
+    if(!r.ok) throw new Error('API');
+    coins=await r.json();
+    renderMarket(coins);
+    setStats();
+    renderTrending();
+  }catch(e){
+    document.getElementById('marketBody').innerHTML='<tr><td colspan="5">Live market data is temporarily unavailable. Refresh the page later.</td></tr>';
+    document.getElementById('trendList').textContent='Market data unavailable right now.';
+  }
+}
+function renderMarket(list){
+  document.getElementById('marketBody').innerHTML=list.map(c=>{
+    const ch=c.price_change_percentage_24h;
+    const cls=ch>=0?'up':'down';
+    const star=watch.includes(c.id)?'★':'☆';
+    return `<tr>
+      <td><span class="coin">${names[c.id]?.[0]||c.name}</span><span class="symbol">${names[c.id]?.[1]||c.symbol.toUpperCase()}</span></td>
+      <td>${money(c.current_price)}</td>
+      <td><span class="pill ${cls}">${ch>=0?'+':''}${Number(ch||0).toFixed(2)}%</span></td>
+      <td>${compact(c.market_cap)}</td>
+      <td><button class="btn alt" onclick="toggleWatch('${c.id}')">${star}</button></td>
+    </tr>`;
+  }).join('');
+}
+function setStats(){
+  const map={bitcoin:'btcStat',ethereum:'ethStat',ripple:'xrpStat',solana:'solStat'};
+  Object.keys(map).forEach(id=>{
+    const c=coins.find(x=>x.id===id); if(c) document.getElementById(map[id]).textContent=money(c.current_price);
+  });
+}
+function filterCoins(){
+  const q=document.getElementById('search').value.toLowerCase();
+  renderMarket(coins.filter(c=>(c.name+c.symbol).toLowerCase().includes(q)));
+}
+function renderTrending(){
+  const top=[...coins].sort((a,b)=>(b.price_change_percentage_24h||0)-(a.price_change_percentage_24h||0)).slice(0,5);
+  document.getElementById('trendList').innerHTML=top.map(c=>`<p><b>${c.name}</b> <span class="${c.price_change_percentage_24h>=0?'up':'down'}">${Number(c.price_change_percentage_24h||0).toFixed(2)}%</span></p>`).join('');
+}
+function toggleWatch(id){
+  watch=watch.includes(id)?watch.filter(x=>x!==id):[...watch,id];
+  localStorage.setItem('dx_watch',JSON.stringify(watch));
+  filterCoins(); renderWatch();
+}
+function renderWatch(){
+  const el=document.getElementById('watchList');
+  const selected=coins.filter(c=>watch.includes(c.id));
+  el.innerHTML=selected.length?selected.map(c=>`<p><b>${c.name}</b> — ${money(c.current_price)}</p>`).join(''):'No coins saved yet.';
+}
+function calculate(){
+  const p=Number(document.getElementById('calcPrice').value), a=Number(document.getElementById('calcAmount').value);
+  document.getElementById('calcResult').textContent=(p>0&&a>=0)?(a/p).toFixed(8)+' coins':'Enter valid numbers';
+}
+function demoTrade(side){
+  const coin=(side==='BUY'?document.getElementById('buyCoin'):document.getElementById('sellCoin')).value.toUpperCase();
+  const amount=(side==='BUY'?document.getElementById('buyAmount'):document.getElementById('sellAmount')).value;
+  alert(`${side} preview: ${coin} — $${amount}. No real order was placed.`);
+}
+function showAd(){
+  document.getElementById('adPlaceholder').style.display='none';
+  const img=document.getElementById('adImage'), vid=document.getElementById('adVideo');
+  img.style.display='block';
+  vid.style.display='block';
+}
+function openAdvert(){
+  document.getElementById('modalTitle').textContent='Advertise With DanielX-BTC';
+  document.getElementById('modal').style.display='flex';
+}
+function openAccount(){
+  document.getElementById('modalTitle').textContent='Create DanielX-BTC Account';
+  document.getElementById('modal').style.display='flex';
+}
+function closeModal(){document.getElementById('modal').style.display='none'}
+function demoAccount(){
+  const name=document.getElementById('modalName').value.trim();
+  alert(name?`Welcome, ${name}! This is a demo account screen.`:'Please enter your name.');
+}
+function sendContact(){
+  const n=document.getElementById('contactName').value.trim(), e=document.getElementById('contactEmail').value.trim();
+  if(!n||!e){alert('Please enter your name and email.');return}
+  alert('Message form ready. Connect it to your email/backend to receive real submissions.');
+}
+renderWatch();
+loadMarket();
+setInterval(loadMarket,60000);
 </script>
-
 </body>
-</html>
+                                   </html>
